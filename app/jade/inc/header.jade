@@ -1,0 +1,18 @@
+header.head
+	.wrapper
+		.head__wrap
+			.head__logo
+				a.logo(href="#")
+					img.logo__img(src="img/logo.png", alt="")
+			nav.head__menu
+				ul.menu
+					each title in ["Продукция", "о нас", "полезное", "контакты", ]
+						li.menu__el
+							a.menu__link(href="#")=title
+			.head__right
+				.head-links
+					a.head-links__link.head-links__link--lc(href="#") Вход
+					a.head-links__link.head-links__link--cart(data-count="3" href="#") Корзина
+			.head__burger
+				.burger
+					span

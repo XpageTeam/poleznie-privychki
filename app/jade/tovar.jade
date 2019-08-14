@@ -1,0 +1,211 @@
+html
+	head
+		meta(charset="utf-8")
+		title MAGIC FOOD BANANA CREAM FOAM CLEANSER
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			#content
+				include inc/header.jade
+				.content
+					.inner-content
+						.wrapper
+							section.tovar
+								.tovar-top
+									.tovar__sliders
+										.tovar-sliders
+											.tovar-sliders__small
+												.tovar-smallslider
+													- for (var i = 1; i <= 3; i++)
+														figure.tovar-smallslider__slide
+															img.tovar-smallslider__slide-img(src="img/photos/tovar-img-"+i+".jpg", alt="")
+													figure.tovar-smallslider__slide.tovar-smallslider__slide--video
+															img.tovar-smallslider__slide-img(src="img/tovar-video.jpg", alt="")
+											.tovar-sliders__big
+												.tovar-big-slider
+													- for (var i = 1; i <= 3; i++)
+														a.tovar-big-slider__slide.fancybox(href="img/photos/tovar-img.jpg" rel="tovar-gallery")
+															img.tovar-big-slider__slide(src="img/photos/tovar-img.jpg", alt="")
+													a(class="fancybox-ajax fancybox.iframe tovar-big-slider__slide tovar-big-slider__slide--video fancybox" href="https://www.youtube.com/embed/uwCW8HgJGBI" rel="tovar-gallery")
+														img.tovar-big-slider__slide(src="img/photos/tovar-img.jpg", alt="")
+									.tovar__info
+										.tovar-info
+											.tovar__subtitle Крем - пенка для умывания
+											.tovar__title MAGIC FOOD BANANA <br /> CREAM FOAM CLEANSER
+											.tovar__rating
+												.rating
+													ul.rating__list
+														li.rating__start.active
+														li.rating__start.active
+														li.rating__start.active
+														li.rating__start.active
+														li.rating__start
+														li.rating__start
+														li.rating__start
+														li.rating__start
+														li.rating__start
+														li.rating__start
+													.rating__count 13 отзывов
+											.tovar__buy
+												.tovar-buy
+													.tovar-buy__price
+														.tovar-price 990 <span class="rub">&#8381;</span>
+													.tovar-buy__counter
+														.cart-counter-wrapper
+															a.cart-counter__link.cart-counter__link--minus(href="#")
+															input.cart-counter__input(type="text" value="1")
+															a.cart-counter__link.cart-counter__link--plus(href="#")
+													.tovar-buy__add-to-cart В корзину
+								.tovar-bot
+									.tovar-bot__tabs
+										.tabs
+											.tabs__tabs
+												.tabs-tab.active(data-id="0") Состав
+												.tabs-tab(data-id="1") бренд
+												.tabs-tab(data-id="2") доставка и возврат
+												.tabs-tab(data-id="3") Отзывы
+											.tabs__main
+												.tabs-content.active(data-id="0")
+													.text-page
+														p Легкий, как облако, дневной увлажняющий крем насыщает кожу влагой, смягчает, успокаивает и защищает обезвоженную, чувствительную кожу.Pure Cloud Cream — это косметический эквивалент невесомому облаку, которое невероятно успокаивает и активно увлажняет кожу, обеспечивая защиту и оздоровление даже сверхчувствительной коже. 
+												.tabs-content(data-id="1")
+													.text-page
+														p Легкий, как облако, дневной увлажняющий крем насыщает кожу влагой, смягчает, успокаивает и защищает обезвоженную, чувствительную кожу.Pure Cloud Cream — это косметический эквивалент невесомому облаку, которое невероятно успокаивает и активно увлажняет кожу, обеспечивая защиту и оздоровление даже сверхчувствительной коже.
+												.tabs-content(data-id="2")
+													.text-page
+														p Легкий, как облако, дневной увлажняющий крем насыщает кожу влагой, смягчает, успокаивает и защищает обезвоженную, чувствительную кожу.Pure Cloud Cream — это косметический эквивалент невесомому облаку, которое невероятно успокаивает и активно увлажняет кожу, обеспечивая защиту и оздоровление даже сверхчувствительной коже.
+												.tabs-content(data-id="3")
+													.tovar__reviews
+														.reviews__title отзывы клиентов
+														.reviews
+															.reviews__one
+																.reviews__one-top
+																	.reviews__one-user
+																		.reviews__one-username Антон Калуга
+																	.reviews__one-date-rating
+																		.reviews__one-date 24.12.2014
+																		ul.rating__list
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																.reviews__one-text
+																	.text-page
+																		p После 2 недель покупки iphone 6 у фронтальной камеры стала съезжать подкладка, виден серый полумесяц, частый брак "эффект полумесяца". Сначала покупки кнопка *home* трещит при нажатии так, что слышно в соседней комнате. Пошёл в магазин на 18 день, обменять отказались и направили в сервис.
+															.reviews__one
+																.reviews__one-top
+																	.reviews__one-user
+																		.reviews__one-username Антон Калуга
+																	.reviews__one-date-rating
+																		.reviews__one-date 24.12.2014
+																		ul.rating__list
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start.active
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																			li.rating__start
+																.reviews__one-text
+																	.text-page
+																		p После 2 недель покупки iphone 6 у фронтальной камеры стала съезжать подкладка, виден серый полумесяц, частый брак "эффект полумесяца". Сначала покупки кнопка *home* трещит при нажатии так, что слышно в соседней комнате. Пошёл в магазин на 18 день, обменять отказались и направили в сервис.
+														.tovar__reviews-btn
+															a.default-btn.fancybox(href="#product-review") Добавить отзыв
+									.tovar__bestsellers
+										.bestsellers__cont
+											.new__title-cont
+												.new__title Рекомендуемое
+												.new__title-link
+													a.all(href="#") Смотреть всё
+												.new__title-arrows
+											.bestseller.bestseller--slider
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-1.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-2.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-3.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-1.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-2.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+												.bestseller__slide
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-3.jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+			include inc/footer.jade
+		include inc/scripts.jade

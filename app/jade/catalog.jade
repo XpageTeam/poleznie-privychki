@@ -1,0 +1,106 @@
+html
+	head
+		meta(charset="utf-8")
+		title Уход за лицом
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			#content
+				include inc/header.jade
+				.content
+					.title-block__cont(style="background-image: url('img/breadcrumbs-base.png')")
+						.title-block
+							.wrapper.wrapper--big
+								.title-block
+									.wrapper
+										h1.title-block__title Уход за лицом
+										.title-block__crumbs
+											.bread-crumbs
+												a.bread-crumbs__link(href="#") Главная
+												a.bread-crumbs__link(href="#") Каталог
+												span.bread-crumbs__this Уход за лицом
+					.inner-content
+						.wrapper
+							section.catalog
+								aside.catalog-filter__cont
+									button.catalog-filter__btn(data-toggle-text="Скрыть фильтры")Показать фильтры
+									.catalog-filter
+										.catalog-filter__categories
+											.catalog-filter__categories-title Каталог товаров
+											.catalog-filter__categories-wrap
+												.categories
+													.categories__one
+														ul.categories__one-list
+															each title in [{title: "Торты", count: 12}, {title: "Конфеты", count: 11}, {title: "Шоколад", count: 6}, {title: "Снеки", count: 6}, ]
+																li.categories__one-el
+																	a.categories__one-link.active(href="#" data-count=title.count)=title.title
+									.catalog-filter
+										.catalog-filter__filters
+												.filter__list
+													.filter__one
+														.filter__one-title-cont
+															span.filter__one-title Цена
+														.filter__one-block
+															.price-filter
+																.price-filter__inputs
+																	input.price-filter__input(data-min="0" name="min" type="tel" value="0 ₽")
+																	input.price-filter__input(data-max="20000" name="max" type="tel" value="7 500 ₽")
+																.price-filter__range
+																	i.range
+													.filter__one
+														.filter__one-title-cont
+															span.filter__one-title Бренд
+														.filter__one-block
+															ul.filter-checks__list
+																- var preffix = "brend"
+																each list, i in [{title: "22|11", count: 4}, {title: "American Crew", count: 42}, {title: "Baxter of California", count: 12}, {title: "Bioderma", count: 3}, {title: "Borodist", count: 14}, {title: "Carmex", count: 11}, {title: "Cinema Secrets", count: 30}, {title: "Carmex", count: 11}, {title: "Cinema Secrets", count: 30}, {title: "Carmex", count: 11}, {title: "Cinema Secrets", count: 30}, ]
+																	li.filter-checks__list-el
+																		.checkbox
+																			input.checkbox__input(type="checkbox" id=preffix+"_"+i)
+																			label.checkbox__label(for=preffix+"_"+i)=list.title
+																				span=" / "+list.count
+													.filter__one
+														.filter__one-title-cont
+															span.filter__one-title тип кожи
+														.filter__one-block
+															ul.filter-checks__list
+																- var preffix = "brend"
+																each list, i in [{title: "возрастная", count: 4}, {title: "жирная", count: 42}, {title: "комбинированная", count: 12}, {title: "нормальная", count: 3}, {title: "проблемная", count: 14}, {title: "сухая", count: 11}, {title: "чувствительная", count: 30}]
+																	li.filter-checks__list-el
+																		.checkbox
+																			input.checkbox__input(type="checkbox" id=preffix+"_"+i)
+																			label.checkbox__label(for=preffix+"_"+i)=list.title
+																				span=" / "+list.count
+													.filter__one
+														.filter__one-title-cont
+															span.filter__one-title эко
+														.filter__one-block
+															ul.filter-checks__list
+																- var preffix = "brend"
+																each list, i in [{title: "без SLS", count: 45}, {title: "без парабенов", count: 2}, {title: "без силикона", count: 5}, {title: "гипоаллергенно", count: 10}]
+																	li.filter-checks__list-el
+																		.checkbox
+																			input.checkbox__input(type="checkbox" id=preffix+"_"+i)
+																			label.checkbox__label(for=preffix+"_"+i)=list.title
+																				span=" / "+list.count
+								div.catalog__cat2
+									.cat2
+										- for (let i = 1; i <= 3; i++)
+											- for (let i = 1; i <= 3; i++)
+												.cat2__one-wrap
+													.cat2__one
+														a.cat2__one-img-cont(href="#")
+															img.cat2__one-img(src="img/photos/cat-"+i+".jpg", alt="")
+														a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+														.cat2__one-buy
+															.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+															.cat2__one-buy-add
+																.cart-counter-wrapper
+																	a.cart-counter__link.cart-counter__link--minus(href="#")
+																	input.cart-counter__input(type="text" value="1")
+																	a.cart-counter__link.cart-counter__link--plus(href="#")
+																a.cat2__one-add-to-cart(href="#") 
+									include inc/paginator.html
+			include inc/footer.jade
+		include inc/scripts.jade

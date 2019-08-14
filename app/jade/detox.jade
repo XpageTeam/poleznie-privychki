@@ -1,0 +1,85 @@
+html
+	head
+		meta(charset="utf-8")
+		title Уход за лицом
+		include inc/head.jade
+		include inc/css.jade
+	body.inner.loading
+		#page-wr
+			#content
+				include inc/header.jade
+				.content
+					.title-block__cont(style="background-image: url('img/breadcrumbs-base.png')")
+						.title-block
+							.wrapper.wrapper--big
+								.title-block
+									h1.title-block__title Уход за лицом
+									.title-block__crumbs
+										.bread-crumbs
+											a.bread-crumbs__link(href="#") Главная
+											a.bread-crumbs__link(href="#") Каталог
+											span.bread-crumbs__this Уход за лицом
+					.inner-content
+						.wrapper
+							section.about.detox
+								.about__one.about__one--top.detox__block_1
+									figure.about__one-img
+										img(src="img/photos/d-1.jpg", alt="")
+									.about__one-desc
+										.main-about__desc-title Detox
+										.main-about__desc-subtitle Detox - программа
+										.about__one-text
+											.text-page
+												p Detox - программа – это популярный и вкусный способ очищения организма. 
+												p Наши Detox напитки изготовлены из свежих растительных компонентов, что позволяет восполнить запас необходимых витаминов, минералов, энзимов, антиоксидантов и фитонутриентов.
+												p Detox - программа способствует:
+												ul
+													each title in ["Повышению иммунитета;", "Запуску процесса похудения;", "Очищению кожи и улучшению цвета лица;", "Выведению шлаков и токсинов;", "Улучшению пищеварения;", "Обнулению рецепторов и уменьшению тяги к сладкому."]
+														li=title
+								.about__one.about__one--top.detox__block_2
+									figure.about__one-img
+										img(src="img/photos/d-2.jpg", alt="")
+									.about__one-desc
+										.about__one-text
+											.text-page
+												table
+													tbody
+														tr
+															td
+																b Рекомендации
+																ol
+																	each title in ["Начните день со стакана воды. Далее напитки согласно нумерации", "Соблюдайте перерыв между приемами напитков 2-3 часа.", "При необходимости пейте чистую воду и теплые травяные напитки без добавления сахара и молока.", ]
+																		li=title
+															td
+																b Detox противопоказан:
+																ul
+																	each title in ["В период беременности и грудного вскармливания.", "При гастрите или язве желудка.", "При сахарном диабете.",]
+																		li=title
+												br
+												p <span>*</span> Если у вас индивидуальная непереносимость компонентов, пищевая аллергия,  сообщите нам об этом и мы предложим Вам замену
+												br
+												p Помните, Detox-программа не должна вызывать дискомфорта, если Вы испытываете дискомфорт, рекомендуем прекратить программу и более качественно подготовиться к новому курсу.
+								.about__one.about__one--top.detox__block_3
+									figure.about__one-img
+										img(src="img/photos/d-3.jpg", alt="")
+									.about__one-desc
+										.about__one-text
+											.text-page
+												p 
+													b Подготовка к детокс программе – за 3 дня до начала:
+												ul
+													li Сократите потребление рафинированных продуктов (сахар, масло ниже первого холодного отжима, мука высших сортов)
+													li Исключите фаст-фуд, жареное, полуфабрикаты и алкоголь откажитесь от употребления животного белка, сократите потребление кофеина.
+													li Употребляйте достаточное количество воды (30-50 мл на килограмм веса).
+													li Ешьте больше зелени, овощей, бобовых, семян и орехов.
+													li Выпивайте минимум один стакан свежевыжатого сока.
+													li Отдавайте предпочтения малоактивным видам спорта, идеально Йога, пилатесс, стретчинг и т.д. Очень важно сохранять запасы энергии. Если Вы регулярно занимаетесь спортом, рекомендуем снизить интенсивность и длительность
+												.detox_time
+													.day_1
+														div Однодневный курс:
+														div 6 волшебных бутылочек со смузи
+													.day_6
+														div Шестидневный курc:
+														div завтрак, обед и 3 напитка
+			include inc/footer.jade
+		include inc/scripts.jade

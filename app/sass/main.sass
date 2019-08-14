@@ -1,0 +1,2538 @@
+$output-bourbon-deprecation-warnings: false;
+@import "bourbon"
+@import "vars"
+@import "base"
+@import "functions"
+
+*[v-cloak]
+	display: none
+
+button, input, select
+	font-family: inherit
+
+.rating
+	
+	&__list
+		display: inline-flex
+		margin-right: 16px
+
+	&__start
+		+size(8px 16px)
+		background: url("../img/ico-star.png") right top no-repeat
+
+		&:nth-child(odd)
+			background-position: left top
+
+		&:nth-child(odd):not(:first-child)
+			padding-left: 4px
+			width: 12px
+			background-position: left 4px top
+
+		&.active
+			background: url("../img/ico-star-active.png") top right no-repeat
+
+			&:nth-child(odd)
+				background-position: left top
+
+			&:nth-child(odd):not(:first-child)
+				// padding-left: 4px
+				// width: 12px
+				background-position: left 4px top
+
+	&__count
+		display: inline-block
+		vertical-align: top
+
+.rub
+	font-style: normal
+	font-size: inherit
+	font-weight: inherit
+	font-family: "Roboto"
+
+.slick
+	
+	&-slide
+		height: auto
+
+	&-arrow
+		border: none
+		padding: 0
+		display: block
+
+	&-list, &-track
+		min-width: 100%
+
+.head
+	padding: rem(45) 0 2rem
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	z-index: 5
+
+	a[href^="tel"]
+		text-decoration: none
+		color: #fff
+		font-weight: bold
+		margin-right: 20px
+
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__left, &__right
+		width: persent(770, 1800)
+
+	&__left, &__right
+		display: flex
+		align-items: center
+
+	&__right
+		justify-content: space-between
+		padding-left: 50px
+
+	&__logo
+		flex: none
+		margin-right: 30px
+
+.head-contacts
+	
+	&__link
+		color: #000
+		text-decoration: none
+
+.head-links
+	display: flex
+	justify-content: flex-end
+	
+	&__link
+		// +size(32px)
+		padding-left: 48px
+		color: #fff
+		text-decoration: none
+		height: 27px
+		line-height: 26px
+		white-space: nowrap
+
+		&:not(:first-child)
+			margin-left: 70px
+
+		&--cart
+			position: relative
+			background: url("../img/ico-head-cart.png") center left no-repeat
+
+			&[data-count]
+
+				&:after
+					content: attr(data-count)
+					border-radius: 50%
+					position: absolute
+					color: #fff
+					text-decoration: none
+					background: $main-color
+					+size(20px)
+					text-align: center
+					font-size: 11px
+					line-height: 20px
+					top: -6px
+					left: 17px
+					text-indent: 0 !important
+
+		&--lc
+			background: url("../img/ico-lk.svg") center left no-repeat !important
+
+.menu
+	display: flex
+	justify-content: center
+	position: relative
+	z-index: 7
+
+	&__link
+		font-weight: bold
+		text-transform: uppercase
+		color: #fff
+		text-decoration: none
+		position: relative
+		white-space: nowrap
+
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			background: $main-color
+			top: calc(100% + 5px)
+			+size(100% 2px)
+			transition: transform .3s ease
+			transform: scaleX(0)
+
+		&:hover, &:focus, &.active
+
+			&:after
+				transform: scaleX(1)
+
+	&__el
+		// padding-bottom: 55px
+
+		&:not(:last-child)
+			margin-right: vw(35)
+
+		&.sub
+
+			div a
+				font-weight: 300
+
+			.menu__link
+				display: block
+				padding-right: 21px
+				position: relative
+				z-index: 1
+				// font-weight: 300
+
+				&:after, &:before
+					content: ""
+					position: absolute
+
+				&:after
+					right: 0
+					+size(7px 4px)
+					background: url("../img/ico-sub-arrow.png") no-repeat
+					top: 7px
+
+				&:before
+					+size(23px 12px)
+					background: url("../img/ico-triangle.png") no-repeat
+					left: calc(50% - 12px)
+					bottom: -55px
+					transition: opacity .4s ease
+					opacity: 0
+
+			&:hover
+
+				.submenu
+					opacity: 1
+					pointer-events: all
+
+				.menu__link
+
+					&:before
+						opacity: 1
+
+// .submenu
+// 	position: absolute
+// 	left: 0
+// 	top: calc(100% - 1px)
+// 	width: 100%
+// 	transition: opacity .4s ease
+// 	pointer-events: none
+// 	opacity: 0
+// 	background: rgba(#fff, .95)
+// 	display: flex
+// 	box-shadow: 13px 13px 15px 0px rgba(#000, .1);
+// 	border-top: 1px solid $border-color
+// 	padding: 55px 99px
+
+// 	&__col
+// 		width: 20%
+// 		flex: 1 1 auto
+
+// 		&:not(:last-child)
+// 			margin-right: 110px
+
+// 	&__title
+// 		text-transform: uppercase
+// 		font-size: rem(18)
+// 		margin-bottom: 30px
+// 		white-space: nowrap
+
+// 		a
+// 			color: #000
+// 			text-decoration: none
+
+// 	&__list
+// 		font-size: rem(14)
+
+// 		&-link
+// 			color: #000
+// 			text-decoration: none
+
+// 		&-el
+
+// 			&:not(:first-child)
+// 				margin-top: 15px
+
+.footer
+	background: #e3e9ed
+	padding: 75px 0
+	margin-top: 105px
+
+	&__copy
+		font-size: rem(14)
+
+		a
+			text-decoration: none
+			display: inline-block
+			margin-top: 6px
+			color: #b2b8bc
+	
+	&-line
+		display: flex
+		justify-content: space-between
+
+		&--bot
+			align-items: center
+			margin-top: 60px
+
+	&__menu
+		display: flex
+		// justify-content: space-between
+		width: persent(780)
+
+	&__phone
+		margin-left: auto
+		width: persent(325)
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		a
+			text-decoration: none
+			color: #b2b8bc
+
+	.submenu__list
+
+		&:not(:last-child)
+			margin-right: vw(47)
+
+		&-el
+
+			&:not(:first-child)
+				margin-top: 11px
+
+		&-link
+			font-size: rem(16)
+			color: #000
+			text-decoration: none
+			transition: color .3s ease
+
+			&:hover, &:focus
+				color: $main-color
+
+.footer-phone
+
+	a
+		color: #000
+		font-size: rem(20)
+
+.footer-call
+	// margin-top: 10px
+
+.f-auth
+	
+	&__link
+		display: inline-block
+		border: 1px solid #d2d0d0
+		color: #000
+		text-decoration: none
+		padding: 20px 37px
+
+.dev
+	display: flex
+	align-items: center
+	color: #000
+	text-decoration: none
+
+	&__text
+		margin-right: 10px
+		font-size: rem(14)
+.bread-crumbs
+	color: #adadad
+	color: #000
+
+	&__link
+		color: inherit
+		text-decoration: none
+		display: inline-block
+		margin-right: 15px
+		//position: relative
+		font-size: rem(14)
+		line-height: rem(20)
+		color: #949494
+
+		&:after
+			display: inline-block
+			content: ""
+			color: inherit
+			pointer-events: none
+			right: -15px
+			margin: 0 0 3px 15px
+			+size(10px 1px)
+			background: #949494
+			// background: url(../img/ico-breadcrumbs-arrow.png) no-repeat
+
+	&__this
+		color: $main-color
+
+.title-block
+	display: flex
+	flex-direction: column-reverse
+
+	&__cont
+		padding: 68px 2rem 50px
+		background: none !important
+
+	&__title 
+		font-size: rem(26)
+		text-transform: uppercase
+
+	&__crumbs
+		margin: 0px 0 20px
+
+	.wrapper
+		// padding: 0
+		width: 100%
+		display: flex
+		flex-direction: column-reverse
+		align-items: flex-start
+
+.inner-content
+
+	.wrapper
+		// padding: 0
+
+.cart
+	&-header 
+		background: #eff0f0
+		padding: 30px 42px
+		display: flex
+		justify-content: space-between
+		font-size: rem(14)
+		letter-spacing: 0.01rem
+		&__name
+			width: 51%
+		&__price 
+			width: 17.4%
+		&__quantity
+			width: 20%
+		&__price-total
+			width: 17.3%
+	&-item
+		display: flex 
+		justify-content: space-between
+		align-items: center
+		padding: 68px 12px 60px 12px
+		&:not(:first-child)
+			padding-top: 0
+		&__title 
+			font-size: rem(18)
+			line-height: rem(22)
+			font-weight: 300
+			text-transform: uppercase
+			letter-spacing: 0.01rem
+
+			a
+				color: #000
+				text-decoration: none
+
+		&__text 
+			font-size: rem(14)
+			line-height: rem(16)
+			font-weight: 100
+			letter-spacing: 0.01rem
+			color: #aaaaa8
+			margin-top: 10px
+		&__name
+			display: flex 
+			width: persent(710, 1400)
+			align-items: center
+			&-foto 
+				position: relative
+		&__info 
+			width: persent(525, 1400)
+			margin-left: 53px
+	
+			.cart-item__quantity
+				width: 100%
+
+		&__price 
+			width: persent(230, 1400)
+			font-size: rem(24)
+			font-weight: 300
+			white-space: nowrap
+		&__quantity
+			width: persent(265, 1400)
+		&__price-total
+			width: persent(240, 1400)
+			font-size: rem(24)
+			font-weight: 300
+		&__close
+			width: persent(50, 1400)
+
+
+	&-counter
+
+		&-wrapper
+			max-width: 115px
+			height: 59px
+			border: 1px solid $border-color
+			display: flex 
+			justify-content: center
+			border-radius: 12px
+
+		&__input
+			max-width: 50px
+			border: 0
+			text-align: center
+			font-size: rem(20)
+			color: #000
+
+		&__link
+			position: relative
+			display: flex
+			align-items: center
+			cursor: pointer
+			width: 28px
+
+			&--minus
+				justify-content: flex-end
+
+				&:before
+					content: ""
+					display: inline-block
+					width: 13px
+					height: 1px
+					background: #000
+
+			&--plus
+
+				&:before
+					content: ""
+					display: inline-block
+					width: 13px
+					height: 1px
+					background: #000
+
+				&:after 
+					content: ""
+					position: absolute
+					width: 1px
+					height: 13px
+					background: #000
+					top: calc(50% - 7px)
+					left: 6px
+
+	&-footer
+		background: #eff0f0
+		padding: 35px 30px
+		display: flex
+		justify-content: flex-end
+		margin-bottom: 42px
+		margin-top: 15px
+		font-size: rem(24)
+		font-weight: 300
+	.favorites
+		&:before 
+			content: ""
+			position: absolute
+			top: 5px
+			left: 7px
+			width: 20px
+			height: 15px
+			background: url(../img/ico-favorits.png) no-repeat center	
+	.close 
+		display: inline-block
+		background: url(../img/ico-close.png) no-repeat center
+		+size(20px)
+		margin-right: 10px
+
+	&__forms
+		border: 1px solid $border-color
+		padding: 53px 69px
+		&-wrap 
+			display: flex
+			flex-wrap: wrap
+		.forms
+			&__input
+				&-wrap
+					display: flex 
+					flex-wrap: wrap
+
+			&__text-bottom
+				text-align: left
+				font-size: rem(16)
+
+			&-wrap
+
+				&:after
+					content: ""
+					width: 30.35714%
+
+				textarea
+					border: 1px solid $border-color
+
+		.forms-input-cont
+			width: persent(425, 1400)
+			&:not(:nth-child(3n))
+				margin-right: persent(60, 1400)
+
+		.forms-textarea-cont
+			width: persent(910, 1400)
+			display: flex 
+			flex-direction: column-reverse
+			margin-right: persent(65, 1400)
+		.textarea 
+			width: 100%
+			height: 137px
+			resize: none
+			padding: 10px 17px
+			border: 1px solid $border-color
+		.recaptcha
+			margin-top: 27px
+			&-wrap
+				width: persent(425, 1400)
+				margin: 30px 0 0
+
+		.btn__forms
+			font-size: rem(16)
+			letter-spacing: 0.01rem
+			margin-top: 30px
+			.btn
+				padding: 21px 54px 23px
+				font-size: rem(16)
+
+.blog
+	
+	&__list 
+		display: flex 
+		flex-wrap: wrap
+		margin-bottom: -68px
+	&__item
+		width: persent(424, 1400)
+		margin-bottom: 68px
+		&:not(:nth-child(3n))
+			margin-right: 64px
+		&-info 
+			border-left: 1px solid $border-color
+			border-bottom: 1px solid $border-color
+			border-right: 1px solid $border-color
+			border-offset: -1px
+			padding: 30px 39px 35px 34px
+			&--top 
+				display: flex 
+				justify-content: space-between
+				padding-bottom: 20px
+
+		&--link 
+			color: #000
+			text-decoration: none
+		&-data 
+			font-size: rem(14)
+			color: #aaaaa8
+			font-weight: 100
+		&-see 
+			font-size: rem(14)
+			color: #aaaaa8
+			font-weight: 100
+		&-title 
+			font-size: rem(18)
+			line-height: rem(22)
+			text-transform: uppercase
+			font-weight: 300
+			letter-spacing: 0.01rem
+
+.paginator
+	display: flex
+	justify-content: center
+	align-items: center
+	
+	&__cont
+		margin: 100px 0
+
+	&__el
+
+		+ .paginator__el
+			//padding-left: 15px
+
+		&--arrow
+
+			&:first-child
+				margin-right: 16px
+
+			&:last-child
+				margin-left: 16px
+
+	&__link
+		color: #000
+		text-decoration: none
+		display: block
+		+size(30px)
+		//transition: color .5s ease, background .5s ease
+		display: flex
+		justify-content: center
+		align-items: center
+
+		&.active
+			color: $main-color
+
+	&__arrow
+		+size(4px 7px)
+		background: url("../img/ico-paginator-arrow.png") no-repeat
+		display: block
+
+		&--left
+			transform: rotate(180deg)
+
+.catalog
+	display: flex
+	justify-content: space-between
+
+	&__cat2
+		width: calc(100% - 362px)
+
+		.paginator__cont
+			margin: 50px 0 0
+
+	&__sort
+		margin-bottom: 57px
+		display: none
+
+.sort
+	padding: 29px 36px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	border: 1px solid $border-color
+
+	&-select
+		display: flex
+		font-size: rem(14)
+
+		&__label
+			color: #000
+
+		&__select
+			color: #b8b8b8
+			border: none
+			padding: 0 22px 0 9px
+			background: url("../img/ico-select-arrow.png") center right 3px no-repeat
+
+.tag
+	+size(45px)
+	
+	&--new
+		background: url("../img/ico-new.png") no-repeat
+
+	&--hit
+		background: url("../img/ico-hit.png") no-repeat
+
+.tags
+
+
+	&__link
+		color: #6e6e6e
+		text-decoration: none
+		display: inline-block
+		font-size: rem(14)
+
+		&:not(:last-child)
+			margin-right: 5px
+
+			&:after
+				content: ","
+
+.cat2__one-fav-add
+	display: inline-block
+	border-radius: 50%
+	background: url("../img/ico-cat-favorite.png") center no-repeat, #fff
+	+size(55px)
+	border: 1px solid $border-color
+
+	&.added
+		background: url("../img/ico-cat-favorite-added.png") center no-repeat, #fff
+
+.cat2
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -81px -89px
+	position: relative
+
+	&__one
+		position: relative
+		text-align: center
+		display: flex
+		flex-direction: column
+		width: 100%
+		align-items: center
+		padding-bottom: 80px
+
+		.rating
+			margin: 20px 0 0
+
+			&__list
+				margin-right: 0
+
+		&-quantity
+			margin: 0 0 35px
+
+		&-tag-cont, &-fav-add-cont
+			position: absolute
+			top: 32px
+			// display: none
+
+		&-tag-cont
+			left: 18px
+
+		&-fav-add-cont
+			right: 18px
+
+		&-wrap
+			margin: 0 0 81px 89px
+			// padding: 20px 0 0
+			width: 33.33%
+			display: flex
+			// border:
+			// 	right: 1px solid $border-color
+			// 	bottom: 1px solid $border-color
+				
+			// &:nth-child(3n)
+			// 	border-right: 0
+
+			// &:nth-child(3n + 1)
+			// 	border-left: 0
+
+			// &:last-child, &:nth-child(3n + 2):nth-last-child(2), &:nth-child(3n + 1):nth-last-child(3)
+			// 	border-bottom: 0
+
+		&-img
+			max-height: 100%
+
+			&-cont
+				width: 100%
+				height: auto
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-bottom: 35px
+
+				img
+					width: 100%
+
+		&-tags
+			margin-bottom: 13px
+			display: none
+
+		&-title
+			color: #000
+			text-decoration: none
+			// text-transform: uppercase
+			display: inline-block
+			max-width: 235px
+			font-weight: 300
+			font-size: rem(18)
+
+		&-buy
+			padding-top: 22px
+			margin-top: auto
+			width: 100%
+			max-width: 257px
+
+			&-add
+				display: flex
+				justify-content: center
+
+		&-price
+			font-weight: bold
+			font-size: rem(24)
+			margin-bottom: 15px
+
+		&-add-to-cart
+			transition: background .3s ease
+			border: 1px solid $main-color
+			padding: 16px 22px 17px
+			background: url("../img/ico-cat-cart-added.png") center no-repeat, $main-color
+			text-align: right
+			text-decoration: none
+			display: inline-block
+			width: 63px
+			color: #fff !important
+			white-space: nowrap
+			border-radius: 12px
+			flex: none
+			margin-left: 28px
+			
+			&--subscribe
+				background: #fff !important
+				text-align: center
+				padding: 20px 30px
+
+			&:hover, &:focus
+				background-color: #ff0001
+
+.fancybox-inner
+	background: #fff
+
+.catalog-filter
+	border: 1px solid $border-color
+	padding: 40px 50px
+
+	&_btns
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		.btn
+			margin-top: 25px
+			width: 133px
+			border-radius: 12px
+			padding: 14px 26px 16px
+
+	&:not(:first-child)
+		margin-top: 40px
+
+	&__categories
+
+		&-title
+			// text-transform: uppercase
+			font-weight: 300
+			font-size: rem(18)
+			padding-bottom: 28px
+			border-bottom: 1px solid $border-color
+
+		&-wrap
+			margin: 35px 0 0
+
+	&__cont
+		width: 304px
+
+.categories
+	
+	&__one
+
+		&-title
+			padding: 25px 25px 20px 0
+			border-bottom: 1px solid $border-color
+			cursor: pointer
+			position: relative
+
+			&:after
+				content: ""
+				position: absolute
+				+size(7px 4px)
+				background: url("../img/ico-select-arrow.png") no-repeat
+				right: 2px
+				transform: rotate(180deg)
+				top: calc(50% - 2px)
+				transition: transform .3s ease
+
+			a
+				color: #000
+				text-decoration: none
+
+			&.nosubsection
+
+				&:after
+					display: none
+
+		&.closed
+
+			.categories__one
+
+				&-title:after
+					transform: rotate(0)
+
+				&-main
+					display: none
+
+		&-main
+			padding: 30px 17px
+			border-bottom: 1px solid $border-color
+
+		&-list
+
+		&-el
+
+			&:not(:first-child)
+				margin-top: 20px
+
+		&-link
+			color: #000
+			text-decoration: none
+			font-size: rem(14)
+
+			&:after
+				display: inline-block
+				content: " / " attr(data-count)
+				color: #969696
+				margin-left: 5px
+				font-weight: 300
+
+			&.active
+				color: $main-color
+				font-weight: bold
+
+.filter
+	
+	&__checks-group
+		display: flex
+		flex-wrap: wrap
+		//justify-content: space-between
+		border-bottom: 1px solid $border-color
+		padding: 29px 0 14px
+		// margin-bottom: -15px
+
+		&:first-child
+			padding-top: 0
+
+		&--icons
+			margin-bottom: 20px
+
+			.checkbox
+
+				&__label
+
+					&:before
+						top: calc(50% - 9px)
+
+					&:after
+						top: calc(50% - 3px)
+
+		.checkbox
+			width: 50%
+			margin-bottom: 15px
+			padding-right: 20px
+
+			&:not(:last-child)
+				// margin-right: 24px
+
+.filter__list
+
+.filter__one
+
+	&:not(:first-child)
+		border-top: 1px solid $border-color
+
+	&:first-child
+
+		.filter__one-title-cont
+			padding-top: 0 !important
+
+	&-title
+		font-size: rem(18)
+		text-transform: uppercase
+		letter-spacing: .01em
+		font-weight: 300
+
+		&-cont
+			padding: 35px 0 30px
+
+
+	&-block
+		padding-bottom: 35px
+
+.price-filter
+	
+	&__inputs
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&:before
+			order: 1
+			content: "-"
+
+	&__input
+		width: persent(93, 210)
+		//flex: 1 1 auto
+		height: 51px
+		border: 1px solid $border-color
+		padding: 0 15px
+		font-family: "Roboto"
+
+		&:first-child
+			order: 0
+
+		&:last-child
+			order: 2
+
+	&__range
+		margin: 28px 0 10px
+
+.ui-slider 
+	
+	.ui-slider
+
+		&-range
+			background: $main-color
+
+		&-handle
+			border: 1px solid $border-color
+			background: #fff
+			+size(22px)
+			top: calc(50% - 11px)
+			margin-left: -11px
+
+			&:after
+				background: $main-color
+				border-radius: 50%
+				+size(8px)
+
+.ui-widget-content
+	background: $border-color
+
+.filter-checks
+	
+	&__list
+		max-height: 215px
+		overflow: hidden
+
+		&-el
+
+			&:not(first-child)
+				margin-top: 17px
+
+			.checkbox
+
+				&__label
+					display: block
+
+					span
+						display: inline-block
+						margin-left: 8px
+						color: #b0b0b0
+
+.jsp
+	
+	&Track
+		background: $border-color
+
+	&VerticalBar
+		width: 2px
+
+	&Drag
+		background: $main-color
+
+.main-slider
+	+size(100%)
+	
+	&__cont
+		margin-bottom: 116px
+		height: 100vh
+
+	> .main-slider__slide:not(:first-child)
+		display: none !important
+
+	.slick
+
+		&-arrow
+			z-index: 4
+			position: absolute
+			top: 0
+			+size(10% 100%)
+			background: url("../img/ico-main-slider-arrow.png") center no-repeat
+
+		&-prev
+			left: 0
+			transform: rotate(180deg)
+
+		&-next
+			right: 0
+
+		&-list, &-track
+			height: 100%
+
+		&-dots
+			position: absolute
+			left: 13.33333%
+			bottom: vh(105)
+			display: flex !important
+
+			li
+
+				&:not(:last-child)
+					margin-right: 28px
+
+				&.slick-active
+
+					button
+
+						&:after
+							opacity: 1
+
+			button
+				display: block
+				text-indent: -9999px
+				overflow: 
+				padding: 0
+				border-radius: 50%
+				+size(9px)
+				background: #fff
+				position: relative
+				border: none
+
+				&:after
+					content: ""
+					position: absolute
+					+size(15px)
+					border: 2px solid #fff
+					background: #0a121b
+					top: calc(50% - 8px)
+					left: calc(50% - 8px)
+					border-radius: inherit
+					opacity: 0
+					transition: opacity .3s ease
+	
+	&__slide
+		display: flex !important
+		position: relative
+		height: 100% !important
+
+		&-text
+			width: persent(756, 1800)
+			display: flex
+			align-items: center
+			padding: 30px persent(45, 1800) 30px persent(240, 1800)
+			position: absolute
+			left: 0
+			top: vh(245)
+			bottom: vh(210)
+			background: #0a121b
+			color: #fff
+			z-index: 2
+
+		&-img
+			display: block
+			max-width: none
+			min-height: 100%
+			min-width: 100%
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+			&-cont
+				+size(100%)
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					top: 0
+					+size(100%)
+					background: rgba(#000, .45)
+					z-index: 1
+
+	&__text
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		// justify-content: center
+
+		&-top-plate
+			font-size: rem(16)
+			line-height: rem(25)
+
+		&-title
+			font-size: rem(57)
+			// line-height: rem()
+			letter-spacing: .01em
+			// margin-top: rem(55)
+			font-weight: 400
+			margin-bottom: 28px
+			order: -1
+
+		&-link
+			@extend %default-btn
+
+			&-cont
+				margin-top: rem(55)
+
+.promo
+	display: flex
+	// justify-content: space-between
+	// align-items: flex-start
+	&__baner
+		margin-right: 2rem
+		flex: auto
+		display: none
+
+		a 
+			display: flex;
+		img
+			width: 100%
+			object-fit: cover;
+
+	&__cont
+
+	&__new
+		width: 36%
+
+	&__list
+		width: 100%
+		display: flex
+
+
+
+.tovar__rating-user
+	display: flex
+	flex-wrap: wrap
+
+.tovar-buy__quantity
+	margin-left: auto
+
+.new
+	border: 1px solid $border-color
+	padding: 45px 85px
+
+	&-slider
+
+		.cat2
+
+			&__one
+				padding-bottom: 0
+
+				&-add-to-cart
+					background: $main-color
+					width: auto
+					margin-left: 0
+
+				&-img
+					// max-height: none
+					max-height: 252px
+					width: auto
+
+					&-cont
+						height: auto
+
+
+	.slick
+
+		&-arrow
+			// border: 1px solid $border-color
+			+size(47px 45px)
+			background: url("../img/ico-slick-arrow.png") center no-repeat, #fff
+
+		&-prev
+			margin-left: auto
+			transform: rotate(180deg)
+			border-left: none
+			order: -1
+
+	&__title
+		// text-transform: uppercase
+		font-size: rem(40)
+		letter-spacing: .01em
+		font-weight: 100
+		order: -2
+
+		&-link
+			order: -1
+			margin-left: auto
+
+			+ .slick-arrow
+				//margin-right: 50px
+
+		&-arrows
+			margin-left: auto
+			border: 1px solid $border-color
+			display: flex
+			border-radius: 12px
+			overflow: hidden
+
+			&:before
+				content: ''
+				background: $border-color
+				align-self: center
+				+size(1px 24px)
+
+		&-cont
+			display: flex
+			align-items: center
+			margin-bottom: 50px
+
+.all
+	text-decoration: none
+
+.promo__list
+	flex: none
+
+.promo-list
+	display: flex
+	width: 100%
+	margin: 0 0 0 -60px
+
+	&__row
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		overflow: hidden
+		width: calc((100% - 30px * 3) / 3)
+		margin: 0 0 0 30px
+
+
+		&:nth-child(odd)
+			.promo__one
+				height: 40%
+
+				&:first-child
+					height: 60%
+
+		&:nth-child(even)
+			.promo__one
+				height: 60%
+
+				&:first-child
+					height: 40%
+
+		
+.promo__one
+	color: #fff
+	text-decoration: none
+	height: 50%
+
+	
+	&:not(:first-child)
+		margin-top: 40px
+
+	&-img
+		position: relative
+		overflow: hidden
+		height: 100%
+		width: 100%
+
+		img
+			display: block
+			height: 100%
+			width: 100%
+			object-fit: cover
+			object-position: center
+
+		&:hover
+
+			img
+				transform: scale3d(1.5, 1.5, 1.5)
+				transition: transform 10s ease
+
+	&-title
+		position: absolute
+		left: 0
+		bottom: 0
+		top: 0
+		width: 100%
+		padding: 0 57px 49px
+		font-size: rem(30)
+		letter-spacing: .01em
+		background: url("../img/shadow.png") left bottom repeat-x
+
+		span
+			position: absolute
+			bottom: 49px
+			left: 57px
+			right: 57px
+
+		// &:after
+		// 	content: ""
+		// 	position: absolute
+		// 	left: 0
+		// 	top: 0
+		// 	+size(100%)
+		// 	background: url("../img/shadow.png") left top repeat-x
+
+.useful
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 rem(85) 0 0
+	
+	&__cont
+		margin: 160px 0 0
+
+	&__img
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 0
+			+size(100%)
+			background: $second-color
+			z-index: -1
+			transform: translate3d(0, 0, 0)
+			transition-delay: 1s
+			transition:	transform 2.5s ease
+
+		&.js__animated
+
+			&:before
+				transform: translate3d(-42px, 74px, 0)
+
+	&__right
+		width: 600px
+
+	&__title
+		font-size: rem(40)
+		letter-spacing: .01em
+
+		&-cont
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin-bottom: rem(58)
+
+	&__one
+
+		&-title
+			font-weight: bold
+			font-size: rem(18)
+			color: #000
+			text-decoration: none
+
+			&-cont
+				display: flex
+				align-items: center
+				justify-content: space-between
+				margin-bottom: 20px
+
+		&-text
+			line-height: rem(24)
+
+.useful-list
+
+	&__one
+		border-top: 1px solid $border-color
+		padding: 40px 0 45px
+
+		&:last-child
+			padding-bottom: 0
+
+.stats
+	display: flex
+	font-size: rem(14)
+	color: #cdcdcd
+
+	&__views, &__comments
+		padding-left: 30px
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: calc(50% - 8px)
+			+size(21px 16px)
+
+	&__views
+		width: 70px
+
+		&:before
+			// +size(21px 14px)
+			background: url("../img/ico-views.png") center no-repeat
+
+	&__comments
+		width: 55px
+
+		&:before
+			background: url("../img/ico-comments.png") center no-repeat
+
+.bestseller
+	margin: 0 -96px 0 0
+	
+	&:after
+		content: ""
+		display: table
+		clear: both
+	
+	&s__cont
+		margin: 70px 0 0
+
+		.new__title-arrows
+			margin-left: 20px
+
+		.slick
+
+			&-track
+				display: flex
+
+			&-slide
+				display: flex !important
+
+			&-arrow
+				// border: 1px solid $border-color
+				+size(47px 45px)
+				background: url("../img/ico-slick-arrow.png") center no-repeat, #fff
+
+			&-prev
+				// margin-left: 20px
+				transform: rotate(180deg)
+				border-left: none
+				order: -1
+
+	> .bestseller__slide:nth-child(n + 4)
+		display: none
+
+	&__slide
+		float: left
+
+		&:not(:first-child)
+			margin-left: 96px
+
+		.cat2__one
+			padding-bottom: 0
+
+.main-about
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 0 0 rem(120)
+	
+	&__cont
+		margin: 280px 0 0
+
+	&__desc
+		width: 480px
+		flex: none
+
+		&-title
+			font-family: "Rage"
+			font-style: italic
+			font-size: rem(83)
+
+		&-subtitle
+			letter-spacing: .250em
+			line-height: rem(25)
+			opacity: .4
+
+		&-text
+			font-size: rem(14)
+			margin-top: rem(50)
+			letter-spacing: .01em
+
+			.text-page
+				line-height: rem(24)
+
+	&__img
+		// opacity: .2
+		// transition: opacity .5s ease
+		position: relative
+		transform: translate3d(-35px, -73px, 0)
+
+		img
+			display: block
+			position: relative
+			z-index: 1
+
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			+size(100%)
+			transition: transform 2s ease
+			transition-delay: .5s
+			background: $second-color
+
+		&.js__animated
+			// opacity: 1
+
+			&:after
+				transform: translate3d(35px, 73px, 0)
+
+.partners
+
+	> .partners__slide:nth-child(n + 9)
+		display: none
+
+	&__cont
+		margin-top: 90px
+
+	.slick
+
+		&-track
+			display: flex
+
+		&-arrow
+			position: absolute
+			+size(5px 9px)
+			background: url("../img/ico-slick-arrow.png") center no-repeat
+			top: calc(50% - 5px)
+			z-index: 2
+
+		&-prev
+			transform: rotate(180deg)
+			left: 0
+
+		&-next
+			right: 0
+	
+	&__slide
+		float: left
+		display: flex !important
+		align-items: center
+		justify-content: center
+
+.tovar
+	margin: 40px 0 0
+	
+	&-top
+		display: flex
+		justify-content: space-between
+
+	&__sliders
+		width: persent(800)
+
+	&__info
+		width: persent(525)
+
+.tovar-sliders
+	display: flex
+	justify-content: space-between
+	height: 625px
+
+	&__small
+		width: 138px
+		flex: none
+		// padding-bottom: 130px
+		display: flex
+		position: relative
+
+	&__big
+		width: calc(100% - 178px)
+		border: 1px solid $border-color
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+.tovar-big-slider
+
+	.slick
+
+		&-track
+			display: flex
+
+		&-arrow
+			+size(70px 100%)
+			top: 0
+			z-index: 2
+			position: absolute
+			background: url("../img/ico-tovar-slider-arrow.png") center no-repeat
+
+		&-prev
+			left: 0
+			transform: rotate(180deg)
+
+		&-next
+			right: 0
+
+	> .tovar-big-slider__slide:not(:first-child)
+		display: none !important
+
+	&__slide
+		display: flex !important
+		align-items: center
+		justify-content: center
+
+.tovar-smallslider
+	display: flex
+
+	.slick
+
+		&-track	
+			//display: flex
+			//flex-direction: column
+
+		&-list
+			height: auto !important
+	
+	&__slide
+		// border: 1px solid $border-color !important
+		display: flex !important
+		align-items: center
+		justify-content: center
+		height: 140px !important
+		cursor: pointer
+
+		&:not(:first-child)
+			margin-top: 26px
+
+.tovar__share
+// 	position: absolute
+// 	width: 100%
+// 	left: 0
+// 	bottom: 0
+// 	z-index: 999
+// 	display: none
+
+// 	&-yashare
+// 		background: #fff
+// 		padding: 10px
+// 		border: 1px solid $border-color
+// 		position: absolute
+// 		bottom: calc(100% + 15px)
+// 		left: 0
+// 		border-radius: 2px
+// 		transition: opacity .3s ease
+// 		pointer-events: none
+// 		opacity: 0
+
+// 		&.js__visible
+// 			opacity: 1
+// 			pointer-events: all
+
+// .ya-share2
+	
+// 	&__icon
+// 		width: 44px !important
+// 		height: 44px !important
+// 		border-radius: 50%
+
+// 	&__list
+// 		display: flex !important
+// 		justify-content: space-around
+// 		flex-wrap: wrap
+// 		margin-bottom: -12px !important
+
+// 		&:after
+// 			content: ""
+// 			width: 44px
+
+// 	&__item
+// 		margin-right: 0 !important
+// 		margin-bottom: 12px !important
+
+// 	&__badge
+// 		border-radius: 50% !important
+
+// 	&__item
+
+// 		&_service
+
+// 			&_vkontakte
+	
+// 				.ya-share2
+
+// 					&__icon
+// 						background: url("../img/ico-vk.png") center no-repeat !important
+
+// 			&_facebook
+
+// 				.ya-share2
+
+// 					&__icon
+// 						background: url("../img/ico-fb.png") center no-repeat !important
+
+// .share
+// 	font-weight: bold
+// 	display: flex
+// 	flex-direction: column
+// 	align-items: center
+// 	text-align: center
+// 	color: #000
+// 	text-decoration: none
+
+// 	&__img
+// 		margin-bottom: 15px
+
+.tovar-fav-add__cont
+	position: absolute
+	top: 28px
+	right: 28px
+	z-index: 4
+
+.tovar-info
+
+.tovar
+	
+	&__subtitle
+		color: #949494
+		margin-bottom: 20px
+
+	&__title
+		font-weight: 300
+		font-size: rem(26)
+		line-height: rem(39)
+		letter-spacing: .01em
+		text-transform: uppercase
+
+	&__rating
+		margin-top: 18px
+
+	&__buy
+		margin-top: 42px
+
+	&__desc
+		margin-top: 36px
+
+	&__tabs
+		margin-top: 37px
+
+.tovar-buy
+		border:
+			top: 1px solid $border-color
+			bottom: 1px solid $border-color
+		padding: 32px 0
+		display: flex
+		align-items: center
+	
+.tovar-buy
+	
+	&__counter
+		margin: 0 23px 0 auto
+		width: 117px
+		flex: none
+
+	.cart-counter-wrapper
+		border: none
+
+	&__add-to-cart
+		background: url("../img/ico-cat-cart-added.png") center left 26px no-repeat, $main-color
+		// border: 1px solid #139658
+		color: #fff
+		padding: 15px 35px 16px 66px
+		text-decoration: none
+		white-space: nowrap
+		border-radius: 12px
+
+.tovar-price
+	font-weight: bold
+	font-size: rem(38)
+	letter-spacing: .01em
+	white-space: nowrap
+
+	.rub
+		font-size: rem(28)
+		//letter-spacing: .01em
+
+.tovar-desc
+	font-size: rem(15)
+	font-weight: 300
+	
+	&__row
+
+		&:not(:first-child)
+			margin-top: 20px
+
+		&-title
+			color: #9a9a9a
+			display: inline-block
+			margin-right: 18px
+
+.tabs
+	font-weight: 300
+	border: 1px solid $border-color
+	border-bottom: none
+	
+	&__tabs
+		display: flex
+		border-bottom: 1px solid $border-color
+
+	&-tab
+		margin-bottom: -1px
+		border: 1px solid transparent
+		border-top: none
+		padding: 14px 24px 16px
+		cursor: pointer
+		user-select: none
+
+		&.active
+			border-color: $border-color
+			border-bottom-color: #fff
+
+		&:first-child
+			border-left: none
+
+		&:last-child
+			// border-right: none
+
+	&__main
+		padding-top: 25px
+		position: relative
+
+	&-content
+		position: absolute
+		pointer-events: none
+		opacity: 0
+		font-size: rem(14)
+		max-width: 850px
+
+		&.active
+			opacity: 1
+			pointer-events: all
+			position: static
+
+.tovar-bot
+	margin-top: 84px
+
+	&__tabs
+
+		.tabs
+
+			&-tab
+				font-weight: bold
+				padding: 35px 50px
+				text-transform: uppercase
+
+			&__main
+				border-bottom: 1px solid $border-color
+				padding: 53px 45px 65px 
+
+.bl_contacts_top
+	margin: 0 0 50px
+	max-width: 800px
+
+	&_text
+		margin-bottom: 25px
+
+.bl_contacts
+
+	&_item
+		padding: 15px 0
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		width: 50%
+		// border-bottom: 1px solid $border-color
+
+		&s
+			display: flex
+			flex-wrap: wrap
+
+		img
+			margin-right: 15px
+
+		p
+			// width: 100%
+			// margin-top: 10px
+
+		a
+			color: #000
+			text-decoration: none
+
+		&:not(:first-child)
+			// margin-top: 10px
+			// border-top: 1px solid $border-color
+
+div.title-search-result
+	border-color: $border-color !important
+
+@media screen and (min-width: 1000px)
+	div.title-search-result
+		width: 400px !important
+
+table.title-search-result
+	width: 100% !important
+
+.title-search
+	
+	&-all
+		padding-top: 20px !important
+		padding-left: 8px !important
+
+	&-selected
+
+		td, a
+			background: $second-color !important
+
+		.title-search-all, .title-search-all a
+			background: none !important
+
+.recaptcha
+	
+	img
+		max-width: none
+		width: 302px
+
+@media screen and (min-width: 660px)
+	.js__moved-head-link
+		display: none
+
+		&--to-rest
+			display: block
+
+@media screen and (min-width: 1000px)
+	.js__moved-head-link--to-rest
+		display: none
+
+#item_add_to_cart
+	
+	.forms-submit-cont
+
+		> div
+			display: flex
+			justify-content: space-between
+			width: 100%
+
+	.forms
+
+		&__submit
+			width: 48%
+			padding: 15px
+			text-align: center
+
+			&:first-child
+				background: $main-color
+				color: #fff
+
+.forms-input-cont
+	
+	.rating
+
+		&__list
+			// flex: 1 1 auto
+			// align-items: center
+			// align-self: center
+			margin: 0 0 3px 20px
+
+// &:nth-child(odd)
+// 	background-position: left top
+
+// &:nth-child(odd):not(:first-child)
+// 	padding-left: 4px
+// 	width: 12px
+// 	background-position: left 4px top
+
+// &.active
+// 	background: url("../img/ico-star-active.png") top right no-repeat
+
+// 	&:nth-child(odd)
+// 		background-position: left top
+
+// 	&:nth-child(odd):not(:first-child)
+// 		background-position: left 4px top
+
+.div-recaptcha + label
+	// display: none
+	height: 19px
+
+#product-review
+	padding: 35px 45px
+
+.rating
+
+	&__list:not(.js__voted)
+
+		&:hover
+
+			.rating
+
+				&__start
+					cursor: pointer
+					background: url("../img/ico-star-active.png") top right no-repeat
+
+					&:nth-child(odd)
+						background-position: left top
+
+					&:nth-child(odd):not(:first-child)
+						background-position: left 4px top
+
+					&:hover
+
+						~ .rating__start
+							background: url("../img/ico-star.png") top right no-repeat
+
+							&:nth-child(odd)
+								background-position: left top
+
+							&:nth-child(odd):not(:first-child)
+								background-position: left 4px top
+
+.reviews
+	
+	&__title
+		text-transform: uppercase
+		font-weight: bold
+		font-size: rem(18)
+		margin-bottom: 30px
+	
+	&__cont
+		max-width: 965px
+
+	&__one
+
+		.rating
+
+			&__list
+				margin-right: 0
+
+		&-date
+			line-height: rem(14)
+			margin-right: 23px
+			padding-right: 23px
+			border-right: 1px solid $border-color
+
+		&-top
+			display: flex
+			align-items: center
+			justify-content: space-between
+			border: 1px solid $border-color
+			padding: 12px 20px
+
+		&-user, &-date-rating
+			display: flex
+			align-items: center
+
+		&-username
+			// margin-left: 22px
+
+		&-text
+			padding: 20px
+			font-size: rem(15)
+			line-height: rem(20)
+			max-width: 900px
+
+.tovar__reviews-btn
+	margin: 25px 0 0
+
+.base-page
+	display: flex
+	flex-wrap: wrap
+	flex-direction: row-reverse
+	justify-content: space-between
+	max-width: none
+
+	&__news-list
+		width: 304px
+		// position: sticky
+		// top: 20px
+
+		+ .text-page
+			width: calc(100% - 360px)
+
+.news-backurl
+	// order: 2
+	margin: 15px 0 0
+	width: 100%
+	// display: none
+
+.news-navbar
+	// order: 1
+	margin: 15px 0 0
+	width: 100%
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	// display: none
+
+.news-list
+	border: 1px solid $border-color
+
+	&__btn
+		margin: rem(35) 0 0
+
+		.default-btn
+			width: 100%
+
+	&__one
+		padding: 2rem
+
+		&:not(:first-child)
+			border-top: inherit
+
+		&-date
+			font-weight: 100
+			color: #6e6e6e
+			font-size: rem(14)
+			margin: 0 0 rem(30)
+
+		&-title
+			text-transform: uppercase
+			font-size: rem(18)
+			line-height: 1.22
+			margin: 0 0 rem(25)
+
+		&-link
+			text-decoration: none
+			display: inline-block
+
+			&:after
+				content: ""
+				display: inline-block
+				+size(4px 7px)
+				background: url("../img/ico-green-arrow.png") no-repeat
+				margin: 0 0 0 10px
+
+.default-btn
+	display: inline-block
+	color: #000
+	text-decoration: none
+	text-align: center
+	padding: 20px 25px
+	font-size: rem(18)
+	transition: color .3s ease, background .3s ease
+	border: 1px solid $main-color
+
+	&:hover, &:focus
+		background: $main-color
+		color: #fff
+
+.page-404
+	text-align: center
+
+	&__cont
+		margin: 40px 0 0
+
+	&__title
+		text-transform: uppercase
+		margin: 40px 0 0
+		font-weight: bold
+		color: $main-color
+		font-size: rem(26)
+
+	&__subtitle
+		margin: 30px 0 0
+		font-size: rem(20)
+
+.doc-panel
+	
+	&__text
+		margin-top: 30px
+
+.about
+	
+	&__one
+		padding: rem(80) 0
+		display: flex
+		position: relative
+
+		&:not(:first-child)
+			margin: 95px 0 0
+
+		&--top
+			align-items: center
+
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				bottom: 0
+				right: calc(50% + 45px)
+				width: 170%
+				background: #e3e9ed
+
+		&--top2, &--bot
+
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				bottom: 0
+				left: -80px
+				width: vw(1670)
+				min-width: 1530px
+				background: #e3e9ed
+
+			.about__one-img
+				width: 46.64286%
+				margin-right: 4.5%
+
+		&--bot
+			padding-bottom: 72px
+			align-items: flex-end
+
+			&:before
+				top: 140px
+
+			.text-page
+				column-count: 1 !important
+
+		&-img
+			width: persent(583)
+			margin-right: persent(119)
+			flex: none
+			position: relative
+			z-index: 1
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+			img
+				display: block
+
+		&-desc
+			flex: 1 1 auto
+			margin-left: 45px
+			position: relative
+			z-index: 1
+
+		&-decor
+			+size(138px 1px)
+			background: #000
+
+		&-text
+			margin: 50px 0 0
+
+			&:first-child
+				margin-top: 0
+
+			.text-page
+				column-count: 2
+				column-gap: 99px
+				font-size: rem(14)
+				line-height: 1.7
+// detox -------------------------
+.detox
+	.text-page
+		b 
+			font-size: 16px
+			line-height: 24px;
+			margin-bottom: 10px;
+			margin-top: 0;
+			display: block;
+			font-weight: normal;
+	.about__one-text
+		display: flex;
+		flex-direction: column;
+	.text-page
+		column-count: 1;
+	&__block_1
+		.main-about__desc-title
+			line-height: 0.8;
+		.text-page 
+			ul
+				li
+					padding: 4px 0;
+					&:before
+						content: "";
+						background: url("../img/ico-check-black.png") no-repeat
+						height: 11px;
+						width: 11px;
+						margin: 0 14px 4px 0;
+	&__block_2
+		.text-page
+			p 
+				margin-top: 0;
+				span
+					color: #fb0000;
+			ol 
+				li
+					margin-bottom: 5px;
+			ul 
+				li
+					margin-bottom: 5px;
+					&:before
+						content: "-";
+						background-color: transparent;
+						height: 3px;
+						width: 10px;
+						margin: auto
+						text-align: center;
+						position: relative;
+						top: -13px;
+			table 
+				line-height: 22px;
+				td
+					padding: 0;
+					padding-right: 20px;
+					vertical-align: top;
+	&__block_3
+		.text-page
+			p 
+				margin-top: 0;
+				span
+					color: #fb0000;
+			ol 
+				li
+					margin-bottom: 5px;
+			ul 
+				li
+					margin-bottom: 5px;
+					&:before
+						content: "-";
+						background-color: transparent;
+						height: 3px;
+						width: 10px;
+						margin: auto
+						text-align: center;
+						position: relative;
+						top: -13px;
+
+.detox_time
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px !important;
+	// > div
+	// 	width: 50%;
+.day_1, .day_6
+	padding-left: 60px;
+	position: relative;
+	&:before
+		content: "";
+		height: 40px;
+		width: 40px;
+		position: absolute;
+		left: 0px
+		top: 1px
+.day_1
+	&:before
+		background: url("../img/ico-day1.png") no-repeat
+.day_6
+	&:before
+		background: url("../img/ico-day6.png") no-repeat
+.news
+	
+	&-navbar, &-backurl
+		display: none
+
+#usefull-review
+	max-width: 1040px
+	margin: 50px 0 0
+
+	.forms
+
+		&__title
+			text-align: left
+			margin-bottom: 25px
+			font-size: rem(18)
+
+		&__text-bottom
+			text-align: left
+
+		&-submit-cont
+			justify-content: flex-start
+			margin-top: 0
+			position: relative
+			top: -40px
+
+
+		&__input
+
+			&--textarea
+				height: 60px
+
+	form
+
+		> br
+			display: none
+
+.usefull__reviews
+	margin: 50px 0 0 !important
+	
+	.reviews__one-date
+		margin-right: 0
+		padding-right: 0
+		border-right: none
+
+.article-top
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin: 0 0 40px 
+
+.forms__input-wrap
+	
+	+ .forms__text-bottom
+		margin: 25px 0 0
+
+#item_add_to_cart--img
+	height: 280px
+	text-align: center
+
+	img
+		max-height: 100%
+
+.form-user__submit
+	margin: 2rem 0 0
+
+@import "_grid"
+@import "media"

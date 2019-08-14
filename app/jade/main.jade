@@ -1,0 +1,202 @@
+html
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.jade
+		include inc/css.jade
+	body.main.loading
+		#page-wr
+			#content
+				include inc/header.jade
+				.content
+					.main-slider__cont
+						.main-slider
+							- for (var i = 0; i <= 3; i++)
+								.main-slider__slide
+									.main-slider__slide-text
+										.main-slider__text
+											.main-slider__text-top-plate.main-slider__text-top-plate--sale Насладитесь свежими пирожными, тортами и пирогами, булочками и рулетиками, трубочками с кремом <br />и горячей сдобой
+											.main-slider__text-title Побалуйте себя
+											.main-slider__text-link-cont
+												a.main-slider__text-link(href="#") Перейти в каталог
+									figure.main-slider__slide-img-cont
+										img.main-slider__slide-img(src="img/photos/main-slide.jpg", alt="")
+					.wrapper
+						.promo__cont
+							.promo
+								//- .promo__new
+									.new
+										.new__title-cont
+											.new__title Новинки
+											.new__title-arrows
+										.new-cont
+											.new-slider
+												- for (var i = 0; i <= 4; i++)
+													.new-slider__slide
+														.cat2__one
+															a.cat2__one-img-cont(href="#")
+																img.cat2__one-img(src="img/photos/promo-img.jpg", alt="")
+															a.cat2__one-title(href="#") Десерт "Микс фруктовый"
+															.cat2__one-buy
+																.cat2__one-price 90 <i class="rub">&#8381;</i>
+																a.cat2__one-add-to-cart.added(href="#") Добавить в корзину
+								.promo__baner
+									a(href="#")
+										img(src="img/photos/promo-img.png", alt="")
+								.promo__list
+									.promo-list
+										.promo-list__row 
+											a.promo__one(href="#")
+												figure.promo__one-img
+													img(src="img/photos/promo-left-top-img.jpg", alt="")
+													figcaption.promo__one-title
+														span Конфеты
+											a.promo__one(href="#")
+												figure.promo__one-img
+													img(src="img/photos/promo-left-bot-img.jpg", alt="")
+													figcaption.promo__one-title
+														span Торты
+										.promo-list__row 
+											a.promo__one(href="#")
+												figure.promo__one-img
+													img(src="img/photos/promo-right-top-img.jpg", alt="")
+													figcaption.promo__one-title
+														span Шоколад
+											a.promo__one(href="#")
+												figure.promo__one-img
+													img(src="img/photos/promo-right-bot-img.jpg", alt="")
+													figcaption.promo__one-title
+														span Снеки
+						.useful__cont
+							.useful
+								figure.useful__img
+									img(src="img/photos/useful-img.jpg", alt="")
+								.useful__right
+									.useful__title-cont
+										.useful__title Полезное
+										.useful__btn
+											a.new-btn(href="#") Подробнее
+									.useful-list
+										each useful in [{title: "Сыроедение: польза и вред", stats: {views: 122, comments: 10}, text: "Сыроедение с каждым годом набирает все больше сторонников, уверенных, что именно оно является оптимальной системой питания для организма. Так ли это?"}, {title: "Что такое сыроедение?", stats: {views: 10, comments: 1}, text: "Сыроедение — питание продуктами без тепловой обработки, в первую очередь овощами, фруктами и ягодами. В рационе также присутствуют ...."}, {title: "Сыроедение: польза и вред", stats: {views: 13, comments: 100}, text: "Сыроедение с каждым годом набирает все больше сторонников, уверенных, что именно оно является оптимальной системой питания для организма. Так ли это?"}, ]
+											.useful-list__one
+												.useful__one-title-cont
+													.useful__one-title=useful.title
+													.useful__one-stats
+														.stats
+															.stats__views=useful.stats.views
+															.stats__comments=useful.stats.comments
+												.useful__one-text=useful.text
+						.main-about__cont
+							.main-about
+								.main-about__desc
+									.main-about__desc-title Raw Story
+									.main-about__desc-subtitle Сыроедческие Десерты на заказ 
+									.main-about__desc-text 
+										.text-page Мы – небольшая компания с большим желанием создавать интересный продукт. В мире существуют автоматизированные линии способные производить торты. Но то, что делают наши мастера – роботам недоступно. А наше желание двигаться вперёд позволяет быть в курсе всего нового. Мы используем, в основном, ручной труд и при этом можем считаться инновационным предприятием.
+								figure.main-about__img
+									img(src="img/photos/main-bot-img.jpg", alt="")
+						//- .bestsellers__cont
+							.new__title-cont
+								.new__title Бестселлеры
+								.new__title-link
+									a.all(href="#") Смотреть всё
+							.bestseller.bestseller--slider
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/bestsellers-1-img.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add.added(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart.added(href="#") Добавить в корзину
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/cat-7.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart(href="#") Добавить в корзину
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/cat-8.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart(href="#") Добавить в корзину
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/bestsellers-1-img.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add.added(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart.added(href="#") Добавить в корзину
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/cat-7.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart(href="#") Добавить в корзину
+								.bestseller__slide
+									.cat2__one
+										a.cat2__one-img-cont(href="#")
+											img.cat2__one-img(src="img/photos/cat-8.jpg", alt="")
+										.cat2__one-fav-add-cont
+											a.cat2__one-fav-add(href="#")
+										.cat2__one-tags
+											.tags
+												a.tags__link(href="#") Крем
+												a.tags__link(href="#") Уход за кожей лица
+										a.cat2__one-title(href="#") FLORIA NUTRA ENERGY 100 HOURS CREAM
+										.cat2__one-buy
+											.cat2__one-price 2 490 <i class="rub">&#8381;</i>
+											a.cat2__one-add-to-cart(href="#") Добавить в корзину
+						//- .partners__cont
+							.partners
+								- for (var i = 1; i <= 6; i++)
+									.partners__slide
+										a.partners__slide-img-cont(href="#")
+											img.partners__slide-img(src="img/photos/p-"+i+".jpg", alt="")
+								- for (var i = 1; i <= 6; i++)
+									.partners__slide
+										a.partners__slide-img-cont(href="#")
+											img.partners__slide-img(src="img/photos/p-"+i+".jpg", alt="")
+								.partners__slide
+										a.partners__slide-img-cont(href="#")
+											img.partners__slide-img(src="img/photos/p-"+3+".jpg", alt="")
+			include inc/footer.jade
+		include inc/scripts.jade

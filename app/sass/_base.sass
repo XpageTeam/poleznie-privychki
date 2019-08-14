@@ -1,0 +1,468 @@
+@import "bourbon"
+@import "vars"
+@import "functions"
+
+*::-webkit-input-placeholder
+	color: #000
+	opacity: 1
+
+*:-moz-placeholder
+	color: #000
+	opacity: 1
+
+*::-moz-placeholder
+	color: #000
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #000
+	opacity: 1
+
+html
+	font-size: 100%
+
+input, a, button, textarea, select
+	outline: none
+
+#page-wr
+	#{$all-text-inputs}, select, input[type="submit"], button, input[type="button"]
+		appearance: none
+
+*, *:after, *:before
+	box-sizing: border-box
+
+*[v-cloak]
+	display: none
+
+%clear-text
+	overflow: hidden
+	text-indent: -9999px
+
+%clearfix
+	
+	&:after
+		display: table
+		clear: both
+		content: ""
+
+%clear-select, select
+	-webkit-appearance: none;
+	/* for FF */
+	-moz-appearance: none;
+	text-indent: 0.01px; 
+	text-overflow: '';
+	/* for IE */
+	-ms-appearance: none;
+	appearance: none!important;
+
+	&::-ms-expand 
+		display: none;
+
+address
+	font-weight: 300
+
+body
+	min-width: 320px
+	line-height: 1.2
+	font-family: $default-font
+	font-weight: 300
+	font-size: rem(16)
+	background: #fff
+	color: #000
+	overflow-x: hidden
+
+	&.inner
+		//background: #f6f6f6
+		
+		.head
+			position: static
+			background: url("../img/nuds.jpg") center no-repeat
+			background-size: cover
+			position: relative
+
+			> .wrapper
+				position: relative
+				z-index: 10
+
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				display: block
+				background: rgba(#000, .5)
+
+
+
+@keyframes spin
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
+
+#page-wr
+	max-width: 2560px
+	box-sizing: content-box
+	// padding: 0 2rem
+	margin: 0 auto
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+
+#content
+	flex: 1 1 auto
+
+footer
+	flex: 0 0 auto
+
+a
+	color: $main-color
+	text-decoration: underline
+	font-weight: inherit
+	transition: color .3s ease
+
+	&[href^="tel"], &[href^="mail"]
+		white-space: nowrap
+
+	&:not(.menu__link), &:not(.head-links__link), 
+	&:not(.main-slider__text-link), &:not(.cat2__one-add-to-cart),
+	&:not(.new-btn), &:not(.promo__one)
+
+		&:hover, &:focus
+			color: $main-color
+
+.wrapper
+	max-width: $base-width + px
+	padding: 0 2rem
+	margin: 0 auto
+	box-sizing: content-box
+	&--big 
+		max-width: $max-width + px
+
+.content
+	
+	.wrapper
+		//padding: 0
+
+input[type="submit"], button
+	cursor: pointer
+
+img
+	max-width: 100%
+
+	&[height]
+		height: auto
+
+li
+	list-style: none
+
+.soc
+	
+	&__link
+		display: inline-block
+		border-radius: 50%
+		+size(48px)
+		background: 
+			position: center
+			repeat: no-repeat
+			color: #dde2e5
+			// size: cover
+
+		&:not(:last-child)
+			margin-right: 17px
+.image
+	margin-bottom: 50px
+	&--right 
+		float: right
+		margin-left: 40px
+		
+	&--left 
+		float: left
+		margin-right: 40px
+	&--figcaption
+		padding: 30px
+		background: $second-color
+		text-align: center
+		margin-top: 30px
+
+blockquote
+	position: relative
+	display: inline
+
+input[type=radio] 
+	display: none
+
+input[type="radio"] + label
+	position: relative
+	display: inline-block
+	margin-bottom: 30px
+	padding-left: 53px
+	padding-top: 5px
+	vertical-align: top
+	cursor: pointer
+
+input[type="radio"] + label
+	margin-bottom: 32px
+
+input[type="radio"] + label::before 
+	content: ""
+	position: absolute
+	top: 0
+	left: 0
+	display: block
+	width: 30px
+	height: 30px
+	border-radius: 50px
+	background-color: #fff
+
+input[type="radio"]:checked + label::after 
+	content: ""
+	position: absolute
+	top: 11px
+	left: 11px
+	display: block
+	width: 9px
+	height: 9px
+	background-color: $main-color
+	border-radius: 50px
+.base-page
+	// max-width: 1200px
+.text-page--width
+	max-width: 1200px
+%text-page, .text-page
+	//font-size: rem(14)
+	//line-height: rem(22)
+	line-height: 1.375
+
+	> *:not(:first-child)
+		margin-top: 22px
+
+	h2, h3, h4, h5, h6
+		font-weight: 300
+
+	h2
+		font-size: rem(22)
+		line-height: rem(28)
+
+	h3
+		font-size: rem(20)
+		line-height: rem(26)
+
+	h4, h5
+		line-height: rem(24)
+
+	h4
+		font-size: rem(18)
+	
+	h5
+		font-size: rem(16)
+
+	img[align="right"]
+		float: right
+		margin-left: 20px
+
+	img[align="left"]
+		float: left
+		margin-right: 20px
+
+	blockquote
+		border-left: 2px solid $main-color
+		padding-left: 21px
+
+	table
+		width: 100%
+		table-layout: fixed
+		color: #000
+
+		td, th
+			padding: 15px 23px
+			font-weight: 300
+			vertical-align: middle
+
+	table[border="1"]
+
+		td, th
+			border: 1px solid $border-color
+
+	ul, ol
+		max-width: 650px
+		margin-top: 0 !important
+
+	li
+		//padding-left: 20px
+		position: relative
+
+		&:before
+			display: inline-block
+
+		&:not(:first-child)
+			//margin-top: 21px
+
+		ul, ol
+			margin-bottom: 20px
+
+		li
+			padding-left: 20px
+
+			&:not(:first-child)
+				margin-top: 0
+
+	ul
+
+		li
+
+			&:before
+				content: ""
+				background: #000
+				+size(13px 1px)
+				vertical-align: middle
+				margin: 0 14px 4px 0
+
+		ul
+
+			li
+				//padding-left: 20px
+
+				&:before
+					content: "-"
+					+size(auto)
+					background: none
+					margin: 0 5px 5px 0
+	
+	ol
+		counter-reset: i
+
+		li
+			counter-increment: i
+
+			&:before
+				content: counter(i) "."
+				margin-right: 4px
+	dt, dd 
+		display: inline
+		font-style: italic
+
+.radio
+	
+	&__input
+		display: none
+
+		&[disabled]
+
+			+ label
+				color: rgb(172, 172, 172) !important
+
+				&:after
+					//opacity: 1
+					//background: #b8b8bb
+
+		&:checked
+
+			+ label
+
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		min-height: 26px
+		display: flex
+		align-items: center
+		cursor: pointer
+		padding-left: 40px
+		user-select: none
+
+		&:before, &:after
+			content: ""
+			position: absolute
+			border-radius: 50%
+
+		&:before
+			top: 0
+			left: 0
+			background: $second-color
+			+size(26px)
+		
+		&:after
+			top: 9px
+			left: 9px
+			+size(8px)
+			transition: opacity .3s ease
+			opacity: 0
+			z-index: 1
+			background: $main-color
+
+.checkbox
+	
+	&__input
+		display: none
+
+		&:checked
+
+			+ label
+				
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		padding-left: 30px
+		cursor: pointer
+		min-height: 17px
+		display: flex
+		align-items: center
+		font-size: 14px
+
+		&:before, &:after
+			position: absolute
+			content: ""
+
+		&:before
+			background: #fff
+			+size(17px)
+			left: 0
+			top: 0px
+			border: 1px solid $border-color
+
+		&:after
+			transition: opacity .3s ease
+			+size(11px 6px)
+			left: 5px
+			top: 6px
+			background: url("../img/ico-check.png") no-repeat
+			opacity: 0
+
+.btn
+	background: $main-color
+	text-align: center
+	color: #fff
+	border: none
+	transition: background .5s ease
+	display: inline-block
+	height: auto
+	padding: 21px 26px 23px
+	min-width: 115px
+
+	&--gray
+		color: #000
+		background: #f6f6f6
+
+	&-delfilter
+		color: #000
+		border: 1px solid $main-color
+		background: none
+
+.new-btn, %default-btn
+	display: inline-block
+	text-decoration: none
+	color: #fff !important
+	text-align: center
+	border-radius: 12px
+	background: $main-color
+	padding: 16px 28px 17px
+	transition: background .3s ease
+
+	&:hover, &:focus
+		background: #ff0102

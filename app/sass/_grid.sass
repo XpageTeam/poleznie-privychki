@@ -1,0 +1,28 @@
+@import "vars"
+@import "functions"
+
+@supports (display: grid)
+	/*Блог*/
+
+	.blog
+		&__list
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			grid-gap: rem(65) rem(64)
+			margin: 0 !important
+		&__item
+			width: auto !important
+			margin: 0 !important
+
+	/**Каталог**/
+	.cat2
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		grid-gap: 81px 89px
+		margin: 0 !important
+
+		&__one
+
+			&-wrap
+				width: auto !important
+				margin: 0 !important
