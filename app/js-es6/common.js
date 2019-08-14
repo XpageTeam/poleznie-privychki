@@ -1,5 +1,18 @@
 $(window).on("load", function () {
 	loaded();
+
+	if($('.tovar-info').length){
+		var breadcrumbs = $('.bread-crumbs').clone();
+		var title = $('.tovar__title').clone();
+
+		$('.col-xs-12').prepend(title);
+		$('.col-xs-12').prepend(breadcrumbs);
+
+
+
+	}
+
+
 });
 
 class Xpage{
@@ -65,6 +78,10 @@ let loaded = () => {
 };
 
 X.ready(() =>{
+
+
+
+
 	/**Адаптив*/
 
 		// $(".submenu__list").each((i, el) => {
@@ -401,5 +418,10 @@ X.ready(() =>{
 		$this.addClass("active");
 		$parent.find(".tabs-content[data-id='"+id+"']").addClass("active");
 	});
+
+
+
+
+
 
 });

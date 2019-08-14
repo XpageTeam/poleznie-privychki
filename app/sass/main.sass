@@ -1,4 +1,4 @@
-$output-bourbon-deprecation-warnings: false;
+$output-bourbon-deprecation-warnings: false
 @import "bourbon"
 @import "vars"
 @import "base"
@@ -9,6 +9,17 @@ $output-bourbon-deprecation-warnings: false;
 
 button, input, select
 	font-family: inherit
+
+.col-xs-12
+	> 
+		.bread-crumbs, .tovar__title
+			display: none
+			
+.old-cat2__one-price
+	margin-right: 20px
+
+	&:before
+		width: 100% !important
 
 .rating
 	
@@ -95,6 +106,7 @@ button, input, select
 	&__logo
 		flex: none
 		margin-right: 30px
+		margin-top: -37px
 
 .head-contacts
 	
@@ -787,21 +799,9 @@ button, input, select
 
 		&-wrap
 			margin: 0 0 81px 89px
-			// padding: 20px 0 0
 			width: 33.33%
 			display: flex
-			// border:
-			// 	right: 1px solid $border-color
-			// 	bottom: 1px solid $border-color
-				
-			// &:nth-child(3n)
-			// 	border-right: 0
-
-			// &:nth-child(3n + 1)
-			// 	border-left: 0
-
-			// &:last-child, &:nth-child(3n + 2):nth-last-child(2), &:nth-child(3n + 1):nth-last-child(3)
-			// 	border-bottom: 0
+			
 
 		&-img
 			max-height: 100%
@@ -835,15 +835,20 @@ button, input, select
 			margin-top: auto
 			width: 100%
 			max-width: 257px
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
 
 			&-add
 				display: flex
 				justify-content: center
+				width: 100%
 
 		&-price
 			font-weight: bold
 			font-size: rem(24)
 			margin-bottom: 15px
+
 
 		&-add-to-cart
 			transition: background .3s ease
@@ -1249,27 +1254,21 @@ button, input, select
 
 .promo
 	display: flex
-	// justify-content: space-between
-	// align-items: flex-start
+
 	&__baner
 		margin-right: 2rem
 		flex: auto
 		display: none
 
 		a 
-			display: flex;
+			display: flex
 		img
 			width: 100%
-			object-fit: cover;
-
-	&__cont
+			object-fit: cover
 
 	&__new
 		width: 36%
 
-	&__list
-		width: 100%
-		display: flex
 
 
 
@@ -1353,13 +1352,12 @@ button, input, select
 .all
 	text-decoration: none
 
-.promo__list
-	flex: none
+
 
 .promo-list
 	display: flex
-	width: 100%
-	margin: 0 0 0 -60px
+	// width: 100%
+	margin: 0 0 0 -30px
 
 	&__row
 		display: flex
@@ -1372,17 +1370,17 @@ button, input, select
 
 		&:nth-child(odd)
 			.promo__one
-				height: 40%
+				height: 38%
 
 				&:first-child
-					height: 60%
+					height: 58%
 
 		&:nth-child(even)
 			.promo__one
-				height: 60%
+				height: 58%
 
 				&:first-child
-					height: 40%
+					height: 38%
 
 		
 .promo__one
@@ -1430,13 +1428,7 @@ button, input, select
 			left: 57px
 			right: 57px
 
-		// &:after
-		// 	content: ""
-		// 	position: absolute
-		// 	left: 0
-		// 	top: 0
-		// 	+size(100%)
-		// 	background: url("../img/shadow.png") left top repeat-x
+
 
 .useful
 	display: flex

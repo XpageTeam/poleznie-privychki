@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -6,11 +6,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 $(window).on("load", function () {
 	loaded();
+
+	if ($('.tovar-info').length) {
+		var breadcrumbs = $('.bread-crumbs').clone();
+		var title = $('.tovar__title').clone();
+
+		$('.col-xs-12').prepend(title);
+		$('.col-xs-12').prepend(breadcrumbs);
+	}
 });
 
 var Xpage = function () {
 	_createClass(Xpage, [{
-		key: "height",
+		key: 'height',
 		set: function set(height) {
 			this.Height = height;
 		},
@@ -18,7 +26,7 @@ var Xpage = function () {
 			return this.Height;
 		}
 	}, {
-		key: "width",
+		key: 'width',
 		set: function set(width) {
 			this.Width = width;
 		},
@@ -40,7 +48,7 @@ var Xpage = function () {
 	}
 
 	_createClass(Xpage, [{
-		key: "init",
+		key: 'init',
 		value: function init() {
 			this.body = $("body");
 			this.html = $("html");
@@ -48,10 +56,10 @@ var Xpage = function () {
 			this.bindEvents();
 		}
 	}, {
-		key: "bindEvents",
+		key: 'bindEvents',
 		value: function bindEvents() {}
 	}, {
-		key: "ready",
+		key: 'ready',
 		value: function ready(func) {
 			var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { type: "document" };
 
@@ -62,7 +70,7 @@ var Xpage = function () {
 			});else if (params.type = "document") document.addEventListener('DOMContentLoaded', func);
 		}
 	}, {
-		key: "onScroll",
+		key: 'onScroll',
 		value: function onScroll() {
 			var func = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : function () {};
 
@@ -88,6 +96,7 @@ var loaded = function loaded() {
 };
 
 X.ready(function () {
+
 	/**Адаптив*/
 
 	// $(".submenu__list").each((i, el) => {

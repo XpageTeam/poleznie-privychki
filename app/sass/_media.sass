@@ -67,11 +67,6 @@ $output-bourbon-deprecation-warnings: false;
 	html
 		font-size: 98%
 
-	.title-block
-
-		&__cont
-			// margin-bottom: 50px
-
 	.submenu
 		padding: 40px
 
@@ -103,24 +98,11 @@ $output-bourbon-deprecation-warnings: false;
 			margin-bottom: 2rem
 
 	.cat2
-		// margin: 0 0 -2rem -2rem
 		grid-gap: 2rem 1rem
 
-		&__one
 
-			&-wrap
-				// width: calc((100% - 2rem * 3) / 3)
-				// margin: 0 0 2rem 2rem
 
-			&-img
 
-				&-cont
-					// height: 285px
-
-	.promo
-
-		&__list
-			width: 759px
 
 @media screen and (max-width: 1300px)
 	.tovar
@@ -165,10 +147,6 @@ $output-bourbon-deprecation-warnings: false;
 	.main-slider__slide-text
 		width: 60%
 
-	.promo
-
-		&__list
-			width: 730px
 
 	.useful
 		padding-right: 0
@@ -187,6 +165,7 @@ $output-bourbon-deprecation-warnings: false;
 
 	.footer__phone
 		width: 35%
+
 
 @media screen and (max-width: 1250px)
 	.main-slider
@@ -208,25 +187,44 @@ $output-bourbon-deprecation-warnings: false;
 
 		&__logo
 			overflow: hidden
-			width: 70px
 
 		&__right
 			padding-left: 0
+
 @media screen and (min-width: 1201px)
 	.detox__block_2
 		&:before
-			content: "";
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: -80px;
-			width: 87.75617vw;
-			min-width: 1530px;
-			background: #e3e9ed;
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			left: -80px
+			width: 87.75617vw
+			min-width: 1530px
+			background: #e3e9ed
+
 @media screen and (max-width: 1200px)
 
 	html
 		font-size: 95%
+
+	.promo__one-title
+		padding: 0 20px 20px
+	
+	.promo__one-title span
+		bottom: 20px
+		left: 20px
+		right: 20px
+
+	.promo-list
+		margin: 0 0 0 -20px
+
+		&__row
+			width: calc((100% - 20px * 3) / 3)
+			margin: 0 0 0 20px
+
+	.promo__one:not(:first-child)
+		margin-top: 20px
 
 	.footer
 		padding: 2rem 0
@@ -335,7 +333,13 @@ $output-bourbon-deprecation-warnings: false;
 		padding: 30px 0 0
 
 		&__menu
-			margin: 50px -2rem 
+			margin: 30px 20px
+
+	.head-links__link--lc
+		font-size: 0
+
+	.head-links__link--cart
+		font-size: 0
 
 	.new
 		padding: 35px 30px
@@ -447,6 +451,24 @@ $output-bourbon-deprecation-warnings: false;
 	html
 		font-size: 94%
 
+	.col-xs-12
+		> 
+			.bread-crumbs, .tovar__title
+				display: block
+
+			.bread-crumbs
+				margin-top: 20px
+
+	.tovar-info
+		.bread-crumbs, .tovar__title
+			display: none
+
+	.promo__one-title span
+		font-size: rem(20)
+
+	.head__logo
+		margin-top: -19px
+
 	.title-block
 		margin: 2rem 0 0
 
@@ -456,20 +478,9 @@ $output-bourbon-deprecation-warnings: false;
 	.tovar
 
 		&-top
-			padding: 80px 0 0
-			position: relative
+			margin-top: 20px !important
 
-		&__info
 
-			.bread-crumbs
-				position: absolute
-				top: 0
-				left: 0
-
-		&__title
-			position: absolute
-			left: 0
-			top: 30px
 
 	.about
 
@@ -1025,6 +1036,7 @@ $output-bourbon-deprecation-warnings: false;
 				align-items: stretch;
 				img 
 					object-fit: cover;
+
 @media screen and (max-width: 1000px) and (min-width: 660px)
 	.tovar
 
@@ -1059,9 +1071,6 @@ $output-bourbon-deprecation-warnings: false;
 
 	.tovar
 
-		&-top
-			padding: 80px 0 0
-
 		&__info
 			margin: 1rem 0 0
 
@@ -1095,10 +1104,7 @@ $output-bourbon-deprecation-warnings: false;
 				&__this
 					display: none
 
-		&__title
-			position: absolute
-			left: 0
-			// top: 0
+
 
 	.about
 
@@ -1308,13 +1314,6 @@ $output-bourbon-deprecation-warnings: false;
 		&__main
 			padding: 1.4rem !important
 
-	.tovar-bot__tabs 
-
-		.tabs-tab
-
-
-	#page-wr
-		// padding: 0 1.4rem
 
 	.title-block__crumbs
 		display: none
@@ -1324,19 +1323,21 @@ $output-bourbon-deprecation-warnings: false;
 		&__img
 			max-height: 80px
 
-	.promo__new
-		margin-bottom: 0
-		display: none
+	.promo
 
-	.cat2__one
-		// padding-bottom: 0
+		&__new
+			margin-bottom: 0
+			display: none
+
+		&__one
+			height: auto !important
+
 
 	.promo-list
-		flex-direction: column
+		flex-wrap: wrap
 
 		&__row
 			width: 100%
-			margin-right: 0 !important
 
 	.useful
 
@@ -1349,41 +1350,27 @@ $output-bourbon-deprecation-warnings: false;
 				margin-bottom: 1.4rem
 
 	.promo
-		margin: -2rem -1.4rem 0
+
 		&__baner
-			order: 1;
-			margin-bottom: 0;
-			margin-top: 1.4rem;
+			order: 1
+			margin-bottom: 0
+			margin-top: 1.4rem
 			img
-				width: 100%;
-				// height: auto;
-				// object-fit: none;
+				width: 100%
+
 			a 
-				display: block;
-		&__row:last-child
-			// border-bottom: 1px solid #d4d4d4
+				display: block
+
 
 		&__one
-			// background: #e3e9ed
-			// padding: .9rem 1.4rem
-			// border-top: 1px solid #d4d4d4
 			margin-top: 1.4rem !important
 
 			&-img
 
 				img
-					// display: none
 					width: 100%
 
-			&-title
-				// position: static
-				// background: none
-				// padding: 0
-				// color: #000
-				// font-size: rem(17)
 
-				span
-					// position: static
 
 	.head
 		padding: 1.4rem 0 1.4rem
@@ -1470,7 +1457,6 @@ $output-bourbon-deprecation-warnings: false;
 
 			&:not(:first-child)
 				margin-top: 10px
-				// border-top: 1px solid #e1e1e1
 
 			&:not([href])
 				display: none
@@ -1480,8 +1466,6 @@ $output-bourbon-deprecation-warnings: false;
 				display: none
 
 			&-img
-				// position: static !important
-				// transform: none !important
 				display: none
 
 			&-desc
@@ -1518,7 +1502,6 @@ $output-bourbon-deprecation-warnings: false;
 			flex-direction: column
 
 	.new__title
-		// margin-bottom: 10px
 
 		&-cont
 			flex-wrap: wrap
@@ -1581,16 +1564,18 @@ $output-bourbon-deprecation-warnings: false;
 			&-wrap
 				border-right: 0 !important
 	.detox_time
-		flex-direction: column;
-		margin-top: 30px !important;
+		flex-direction: column
+		margin-top: 30px !important
+
 		> div
-			padding-bottom: 15px;
+			padding-bottom: 15px
 	.detox
 		tr 
-			display: flex;
-			flex-direction: column;
+			display: flex
+			flex-direction: column
 		td 
-			margin-bottom: 15px;
+			margin-bottom: 15px
+
 @media screen and (max-width: 370px)
 	.div-recaptcha
 		display: flex
