@@ -18,7 +18,7 @@ $output-bourbon-deprecation-warnings: false;
 		padding-left: 6vw
 
 	.main-slider .slick-dots
-		left: 6vw
+		right: 6vw
 
 	.new
 		padding: 45px 50px
@@ -30,21 +30,14 @@ $output-bourbon-deprecation-warnings: false;
 	html
 		font-size: 99%
 
-	.title-block
 
 
-	.main-slider
-
-		&__slide
-
-			&-text
-				// padding: 30px 2% 30px 10%
 
 	.main-slider__slide-text
 		padding-left: 2rem
 
 	.main-slider .slick-dots
-		left: 2rem
+		right: 2rem
 
 	.catalog
 
@@ -99,6 +92,9 @@ $output-bourbon-deprecation-warnings: false;
 
 	.cat2
 		grid-gap: 2rem 1rem
+
+	.main-slider .slick-dots
+		bottom: 9.8vh
 
 
 
@@ -1370,13 +1366,23 @@ $output-bourbon-deprecation-warnings: false;
 				img
 					width: 100%
 
+	.main-about__desc-title
+		font-size: 2.1875rem
+
+
+	.inner
+		.head
+			background: url("../img/inner-header-bg.jpg") center no-repeat
+
+			&__logo
+				width: 40px
+				margin: 0
 
 
 	.head
 		padding: 1.4rem 0 1.4rem
 		margin: 0 0 2rem
 		position: relative
-		background: url("../img/inner-header-bg.jpg") center no-repeat
 		background-size: cover
 
 		&-links

@@ -72,6 +72,10 @@ button, input, select
 
 	&-list, &-track
 		min-width: 100%
+.main
+	.head__logo
+		margin-top: 0
+		width: 49px
 
 .head
 	padding: rem(45) 0 2rem
@@ -80,6 +84,7 @@ button, input, select
 	top: 0
 	width: 100%
 	z-index: 5
+	background-color: #000
 
 	a[href^="tel"]
 		text-decoration: none
@@ -793,6 +798,7 @@ button, input, select
 
 		&-tag-cont
 			left: 18px
+			z-index: 10
 
 		&-fav-add-cont
 			right: 18px
@@ -1147,8 +1153,8 @@ button, input, select
 
 		&-dots
 			position: absolute
-			left: 13.33333%
-			bottom: vh(105)
+			right: 13.33333%
+			bottom: 21.85224vh
 			display: flex !important
 
 			li
@@ -1200,7 +1206,7 @@ button, input, select
 			left: 0
 			top: vh(245)
 			bottom: vh(210)
-			background: #0a121b
+			background: rgba(0, 0, 0, 0.6)
 			color: #fff
 			z-index: 2
 
@@ -1356,7 +1362,6 @@ button, input, select
 
 .promo-list
 	display: flex
-	// width: 100%
 	margin: 0 0 0 -30px
 
 	&__row
@@ -1411,6 +1416,15 @@ button, input, select
 				transform: scale3d(1.5, 1.5, 1.5)
 				transition: transform 10s ease
 
+
+
+	&:hover
+		.promo__one-title
+			span
+				&:after
+					background-color: #ff0102
+
+
 	&-title
 		position: absolute
 		left: 0
@@ -1422,12 +1436,28 @@ button, input, select
 		letter-spacing: .01em
 		background: url("../img/shadow.png") left bottom repeat-x
 
+
+
 		span
 			position: absolute
 			bottom: 49px
 			left: 57px
 			right: 57px
+			display: flex
+			justify-content: space-between
+			align-items: center
 
+			&:after
+				content: ''
+				width: 50px
+				height: 50px
+				background-color: #C32E24
+				background-image: url('../img/ico-arrow-btn.svg')
+				background-position: center
+				background-repeat: no-repeat
+				border-radius: 10px
+				flex: none
+				transition: background .3s ease
 
 
 .useful
@@ -1690,7 +1720,7 @@ button, input, select
 
 	&__big
 		width: calc(100% - 178px)
-		border: 1px solid $border-color
+		// border: 1px solid $border-color
 		position: relative
 		display: flex
 		flex-direction: column
