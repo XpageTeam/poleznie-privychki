@@ -589,7 +589,7 @@ button, input, select {
   top: 0;
   width: 100%;
   z-index: 5;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .head a[href^="tel"] {
@@ -1990,6 +1990,10 @@ button, input, select {
   height: 38%;
 }
 
+.promo-list__row:last-child .promo__one {
+  height: 100% !important;
+}
+
 .promo__one {
   color: #fff;
   text-decoration: none;
@@ -3110,7 +3114,6 @@ table.title-search-result {
   justify-content: flex-start;
   margin-top: 0;
   position: relative;
-  top: -40px;
 }
 
 #usefull-review .forms__input--textarea {

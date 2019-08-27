@@ -84,7 +84,7 @@ button, input, select
 	top: 0
 	width: 100%
 	z-index: 5
-	background-color: #000
+	background-color: rgba(0, 0, 0, 0.6)
 
 	a[href^="tel"]
 		text-decoration: none
@@ -1387,6 +1387,10 @@ button, input, select
 				&:first-child
 					height: 38%
 
+		&:last-child
+			.promo__one
+				height: 100% !important
+
 		
 .promo__one
 	color: #fff
@@ -2514,7 +2518,6 @@ table.title-search-result
 			justify-content: flex-start
 			margin-top: 0
 			position: relative
-			top: -40px
 
 
 		&__input

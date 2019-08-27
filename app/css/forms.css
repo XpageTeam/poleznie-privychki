@@ -67,7 +67,7 @@
 }
 
 .forms__text {
-  margin: 2.57202vh 0;
+  margin: 25px 0;
   text-align: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -100,7 +100,7 @@
   width: 47.2%;
   min-width: 10px;
   position: relative;
-  margin-bottom: 2.77778vh;
+  margin-bottom: 27px;
 }
 
 .forms-input-cont--rating {
