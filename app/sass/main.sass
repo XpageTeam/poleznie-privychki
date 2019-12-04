@@ -11,6 +11,22 @@ button, input, select
 	font-family: inherit
 
 
+.ves-prop
+	.tab-block
+		display: flex
+		margin-bottom: 15px
+
+	.ves 
+		flex: 1 1 auto
+		padding: 10px
+		text-align: center
+		background-color: #e3e9ed
+		cursor: pointer
+		transition: background .3s ease
+
+		&.active, &:hover
+			background-color: #90d701
+
 .about__one--
 	flex-direction: row-reverse
 
@@ -797,7 +813,7 @@ button, input, select
 		flex-direction: column
 		width: 100%
 		align-items: center
-		padding-bottom: 80px
+		// padding-bottom: 80px
 
 		.rating
 			margin: 20px 0 0
