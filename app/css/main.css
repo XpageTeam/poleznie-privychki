@@ -506,6 +506,15 @@ button, input, select {
   font-family: inherit;
 }
 
+.ves-content-item.active {
+  display: flex !important;
+  justify-content: center;
+}
+
+.old-cat2__one-price {
+  margin-left: 15px;
+}
+
 .ves-prop .tab-block {
   display: flex;
   margin-bottom: 15px;
