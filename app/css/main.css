@@ -4132,6 +4132,11 @@ table.title-search-result {
   html {
     font-size: 93%;
   }
+  .tovar-buy__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .tovar__info {
     margin: 1rem 0 0;
   }
