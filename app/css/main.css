@@ -4132,6 +4132,20 @@ table.title-search-result {
   html {
     font-size: 93%;
   }
+  .cart-aside__footer {
+    display: none !important;
+  }
+  .cart-footer .policy {
+    margin-top: 0;
+  }
+  .cart-footer .btn__forms {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .cart-footer .btn__forms .btn {
+    padding: 13px 16px 13px;
+    font-size: 16px;
+  }
   .tovar-buy__price {
     display: flex;
     flex-direction: column;
