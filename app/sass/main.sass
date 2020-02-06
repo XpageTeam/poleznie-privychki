@@ -7,6 +7,111 @@ $output-bourbon-deprecation-warnings: false
 *[v-cloak]
 	display: none
 
+.detail-order
+
+	&__table
+		width: 100%
+		border-bottom: 1px solid $border-color
+
+		tr
+
+			&:first-child, &.detail-order__table-subtitle + tr
+
+				td
+					padding-top: 27px
+
+			&.detail-order__table-subtitle
+
+				td
+					padding-top: 0
+
+				span
+					display: block
+					margin: 25px 0 0
+					padding: rem(17) rem(42)
+					color: #adb4c6
+					border-top: 1px solid $border-color
+
+				&:not(:last-child)
+
+					span
+						border-bottom: 1px solid $border-color
+
+		td
+			padding-top: 11px
+
+			&:first-child
+				width: 255px
+
+				&:not(:last-child)
+					padding-left: rem(42)
+
+			&:not(:first-child)
+				padding-left: 10px
+.order-list
+	display: flex
+	padding: rem(39) rem(44) rem(44)
+
+	&__table
+		flex: 1 1 auto
+
+		td
+			vertical-align: middle
+			padding-top: 7px
+			padding-bottom: 7px
+
+			&:first-child
+				width: 88px
+
+			&:nth-child(2)
+				padding-left: rem(70)
+				width: 270px
+
+			&:last-child
+				width: 82px
+
+	&__summary
+		flex: none
+		margin-left: rem(96)
+
+.order-summary
+	background: #ecf0f2
+	padding: rem(35) rem(28) rem(42)
+	position: sticky
+	top: 20px
+
+	&__summ, &__deliv
+
+		&:not(:first-child)
+			margin: rem(8) 0 0
+
+	&__total
+		margin: rem(30) 0 0
+		font-size: rem(17)
+		line-height: lh(30, 17)
+
+.d-order
+
+	&__img
+
+		img
+			display: block
+
+	&__title
+		display: block
+		// max-width: 210px
+
+	&__count
+		text-align: center
+
+	&__price
+		text-align: right
+		white-space: nowrap
+
+.orders-item
+
+	&__btn
+		margin: rem(37) 0 0				
 .orders
 
 	&__item

@@ -439,12 +439,71 @@ $output-bourbon-deprecation-warnings: false
 
 				.text-page
 					column-gap: 30px
+
 @media screen and (max-width: 1130px)
 	.head
 
 		&__right
 			// padding-left: 0
 			width: 47%
+@media screen and (max-width: 1100px)
+	.order-list
+
+		&__table
+
+			td
+
+				&:nth-child(2)
+					// width: auto
+					padding-left: 2rem
+
+	.orders-item
+
+		&__head
+			padding: 20px 2rem
+
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 2rem
+
+			tr
+
+				&:first-child
+
+					td
+						padding-top: 20px
+
+				&.detail-order__table-subtitle
+
+					+ tr
+
+						td
+							padding-top: 20px
+
+					span
+						padding-left: 2rem
+						margin: 20px 0 0
+
+	.order-list
+		padding: 20px 2rem
+
+		&__summary
+			margin-left: 2rem
+
+	.d-order__count
+		white-space: nowrap
+
+	.w-item
+
+		&__img
+			margin-right: 30px
 
 @media screen and (max-width: 1000px)
 	html
@@ -1040,6 +1099,32 @@ $output-bourbon-deprecation-warnings: false
 				img 
 					object-fit: cover
 
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 18px
+
+			tr
+
+				&.detail-order__table-subtitle
+
+					span
+						padding-left: 18px
+						margin: 20px 0 0
+
+	.order-list
+		padding: 20px 18px
+		flex-direction: column
+
+		&__summary
+			margin: 30px 0 0
+
 @media screen and (max-width: 1000px) and (min-width: 660px)
 	.tovar
 
@@ -1073,6 +1158,12 @@ $output-bourbon-deprecation-warnings: false
 	html
 		font-size: 93%
 
+	.orders-item__btn
+		a
+			width: 100%
+			margin-bottom: 20px
+			padding: 12px 25px
+
 	.detail-order
 
 		&__table
@@ -1098,6 +1189,48 @@ $output-bourbon-deprecation-warnings: false
 
 		&__summary
 			margin: 25px 0 0
+
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 16px
+						width: 100px
+
+			tr
+
+				&.detail-order__table-subtitle
+
+					span
+						padding-left: 16px
+
+	.order-list
+		padding: 20px 16px
+		flex-direction: column
+
+		&__summary
+			margin: 25px 0 0
+
+	.orders-item
+
+		&__head, &__desc-title
+			padding: 16px
+
+		&__head
+			flex-wrap: wrap
+			justify-content: space-between
+
+		&__date
+			margin: 0 !important
+
+		&__more
+			margin: 10px 0 0 
+			width: 100%
 
 	.filter
 		width: 100%

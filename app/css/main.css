@@ -502,6 +502,118 @@ input[type="radio"]:checked + label::after {
   display: none;
 }
 
+.detail-order__table {
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.detail-order__table tr:first-child td, .detail-order__table tr.detail-order__table-subtitle + tr td {
+  padding-top: 27px;
+}
+
+.detail-order__table tr.detail-order__table-subtitle td {
+  padding-top: 0;
+}
+
+.detail-order__table tr.detail-order__table-subtitle span {
+  display: block;
+  margin: 25px 0 0;
+  padding: 1.0625rem 2.625rem;
+  color: #adb4c6;
+  border-top: 1px solid #e1e1e1;
+}
+
+.detail-order__table tr.detail-order__table-subtitle:not(:last-child) span {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.detail-order__table td {
+  padding-top: 11px;
+}
+
+.detail-order__table td:first-child {
+  width: 255px;
+}
+
+.detail-order__table td:first-child:not(:last-child) {
+  padding-left: 2.625rem;
+}
+
+.detail-order__table td:not(:first-child) {
+  padding-left: 10px;
+}
+
+.order-list {
+  display: flex;
+  padding: 2.4375rem 2.75rem 2.75rem;
+}
+
+.order-list__table {
+  flex: 1 1 auto;
+}
+
+.order-list__table td {
+  vertical-align: middle;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.order-list__table td:first-child {
+  width: 88px;
+}
+
+.order-list__table td:nth-child(2) {
+  padding-left: 4.375rem;
+  width: 270px;
+}
+
+.order-list__table td:last-child {
+  width: 82px;
+}
+
+.order-list__summary {
+  flex: none;
+  margin-left: 6rem;
+}
+
+.order-summary {
+  background: #ecf0f2;
+  padding: 2.1875rem 1.75rem 2.625rem;
+  position: sticky;
+  top: 20px;
+}
+
+.order-summary__summ:not(:first-child), .order-summary__deliv:not(:first-child) {
+  margin: 0.5rem 0 0;
+}
+
+.order-summary__total {
+  margin: 1.875rem 0 0;
+  font-size: 1.0625rem;
+  line-height: lh(30, 17);
+}
+
+.d-order__img img {
+  display: block;
+}
+
+.d-order__title {
+  display: block;
+}
+
+.d-order__count {
+  text-align: center;
+}
+
+.d-order__price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.orders-item__btn {
+  margin: 2.3125rem 0 0;
+}
+
 .orders__item:not(:first-child) {
   margin: 2.25rem 0 0;
 }
@@ -3740,6 +3852,40 @@ table.title-search-result {
   }
 }
 
+@media screen and (max-width: 1100px) {
+  .order-list__table td:nth-child(2) {
+    padding-left: 2rem;
+  }
+  .orders-item__head {
+    padding: 20px 2rem;
+  }
+  .detail-order__table td:first-child:not(:last-child) {
+    padding-left: 2rem;
+  }
+  .detail-order__table tr:first-child td {
+    padding-top: 20px;
+  }
+  .detail-order__table tr.detail-order__table-subtitle + tr td {
+    padding-top: 20px;
+  }
+  .detail-order__table tr.detail-order__table-subtitle span {
+    padding-left: 2rem;
+    margin: 20px 0 0;
+  }
+  .order-list {
+    padding: 20px 2rem;
+  }
+  .order-list__summary {
+    margin-left: 2rem;
+  }
+  .d-order__count {
+    white-space: nowrap;
+  }
+  .w-item__img {
+    margin-right: 30px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   html {
     font-size: 94%;
@@ -4227,6 +4373,20 @@ table.title-search-result {
   .detox__block_1 .about__one-img img, .detox__block_2 .about__one-img img, .detox__block_3 .about__one-img img {
     object-fit: cover;
   }
+  .detail-order__table td:first-child:not(:last-child) {
+    padding-left: 18px;
+  }
+  .detail-order__table tr.detail-order__table-subtitle span {
+    padding-left: 18px;
+    margin: 20px 0 0;
+  }
+  .order-list {
+    padding: 20px 18px;
+    flex-direction: column;
+  }
+  .order-list__summary {
+    margin: 30px 0 0;
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 660px) {
@@ -4265,6 +4425,11 @@ table.title-search-result {
   html {
     font-size: 93%;
   }
+  .orders-item__btn a {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px 25px;
+  }
   .detail-order__table td:first-child:not(:last-child) {
     padding-left: 16px;
     width: 100px;
@@ -4278,6 +4443,34 @@ table.title-search-result {
   }
   .order-list__summary {
     margin: 25px 0 0;
+  }
+  .detail-order__table td:first-child:not(:last-child) {
+    padding-left: 16px;
+    width: 100px;
+  }
+  .detail-order__table tr.detail-order__table-subtitle span {
+    padding-left: 16px;
+  }
+  .order-list {
+    padding: 20px 16px;
+    flex-direction: column;
+  }
+  .order-list__summary {
+    margin: 25px 0 0;
+  }
+  .orders-item__head, .orders-item__desc-title {
+    padding: 16px;
+  }
+  .orders-item__head {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .orders-item__date {
+    margin: 0 !important;
+  }
+  .orders-item__more {
+    margin: 10px 0 0;
+    width: 100%;
   }
   .filter {
     width: 100%;
