@@ -502,6 +502,139 @@ input[type="radio"]:checked + label::after {
   display: none;
 }
 
+.orders__item:not(:first-child) {
+  margin: 2.25rem 0 0;
+}
+
+.orders-item .default-btn:hover {
+  color: #fff;
+}
+
+.orders-item__body {
+  border: 1px solid #e1e1e1;
+  border-top: none;
+}
+
+.orders-item__head {
+  background: #ecf0f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4375rem 2.625rem;
+}
+
+.orders-item__date {
+  margin-right: auto;
+}
+
+.orders-item__date, .orders-item__desc-title {
+  color: #adb4c6;
+}
+
+.orders-item__title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 34px;
+}
+
+.orders-item__desc-title {
+  padding: 1.375rem 2.625rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.orders-desc {
+  padding: 2.375rem 2.625rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orders-desc__left, .orders-desc__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.orders-desc__btn {
+  padding: 20px 0 0;
+  margin: auto 0 0;
+}
+
+.orders-desc__right .orders-item__date {
+  margin: 0 0 15px 24px;
+}
+
+.orders-desc__left > ul:first-child {
+  line-height: lh(28, 14);
+}
+
+.orders-desc__list-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.orders-desc__list-title:not(:first-child) {
+  margin: 2rem 0 14px;
+}
+
+.orders-desc__list li:not(:first-child) {
+  margin: 13px 0 0;
+}
+
+.orders-desc__list:not(.js__opened) li:nth-child(n + 3) {
+  display: none;
+}
+
+.orders-desc__list.js__opened ~ .orders-desc__list-toggle:before {
+  transform: rotateZ(180deg);
+}
+
+.orders-desc__list-toggle {
+  margin: 2rem 0 0;
+  color: #d71213;
+  position: relative;
+  padding-left: 23px;
+  white-space: nowrap;
+}
+
+.orders-desc__list-toggle:before {
+  content: "";
+  transition: transform .3s ease;
+  position: absolute;
+  top: 9px;
+  left: 3px;
+  background: url("../img/ico-orders-toggle.png") no-repeat;
+  width: 10px;
+  height: 5px;
+}
+
+.orders-menu {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.orders-menu__item:not(:last-child) {
+  margin-right: 2.4375rem;
+  position: relative;
+}
+
+.orders-menu__item:not(:last-child):after {
+  content: "";
+  height: 19px;
+  width: 1px;
+  background: #e4e8ea;
+  position: absolute;
+  bottom: 1px;
+  left: calc(100% + 20px);
+}
+
+.orders-menu__link {
+  transition: color .3s ease;
+}
+
+.orders-menu__link:hover, .orders-menu__link:focus, .orders-menu__link.active {
+  color: #d71213;
+}
+
 button, input, select {
   font-family: inherit;
 }
@@ -4131,6 +4264,76 @@ table.title-search-result {
 @media screen and (max-width: 660px) {
   html {
     font-size: 93%;
+  }
+  .detail-order__table td:first-child:not(:last-child) {
+    padding-left: 16px;
+    width: 100px;
+  }
+  .detail-order__table tr.detail-order__table-subtitle span {
+    padding-left: 16px;
+  }
+  .order-list {
+    padding: 20px 16px;
+    flex-direction: column;
+  }
+  .order-list__summary {
+    margin: 25px 0 0;
+  }
+  .filter {
+    width: 100%;
+  }
+  .lc-password {
+    max-width: none;
+  }
+  .orders-item__head, .orders-item__desc-title {
+    padding: 16px;
+  }
+  .orders-item__head {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .orders-item__date {
+    margin: 0 !important;
+  }
+  .orders-item__more {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+  .order-list__table, .order-list tbody, .order-list td {
+    display: block;
+  }
+  .order-list tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .order-list tr:not(:last-child) {
+    padding-bottom: 15px;
+  }
+  .order-list tr:not(:first-child) {
+    padding-top: 15px;
+    border-top: 1px solid var(--borderColor);
+  }
+  .order-list td:nth-child(2) {
+    width: calc(100% - 88px);
+  }
+  .orders-desc {
+    padding: 16px;
+    flex-direction: column;
+  }
+  .orders-desc__right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 0;
+  }
+  .orders-desc__btn {
+    width: 100%;
+  }
+  .orders-desc__btn .default-btn {
+    display: block;
+    text-align: center;
   }
   .cart-aside__footer {
     display: none !important;

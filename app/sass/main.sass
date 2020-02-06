@@ -7,6 +7,144 @@ $output-bourbon-deprecation-warnings: false
 *[v-cloak]
 	display: none
 
+.orders
+
+	&__item
+
+		&:not(:first-child)
+			margin: rem(36) 0 0
+
+.orders-item
+
+	.default-btn
+		&:hover
+			color: #fff
+
+	&__body
+		border: 1px solid $border-color
+		border-top: none
+
+	&__head
+		background: #ecf0f2
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: rem(23) rem(42)
+
+	&__date
+		margin-right: auto
+
+	&__date, &__desc-title
+		color: #adb4c6
+
+	&__title
+		font-weight: bold
+		font-size: rem(16)
+		margin-right: 34px
+
+	&__desc
+
+		&-title
+			padding: rem(22) rem(42)
+			border-bottom: 1px solid $border-color
+
+.orders-desc
+	padding: rem(38) rem(42)
+	display: flex
+	justify-content: space-between
+
+	&__left, &__right
+		display: flex
+		flex-direction: column
+
+	&__btn
+		padding: 20px 0 0
+		margin: auto 0 0
+
+	&__right
+
+		.orders-item__date 
+			margin: 0 0 15px 24px
+
+	&__left
+
+		> ul
+
+			&:first-child
+				line-height: lh(28, 14)
+
+	&__list
+
+		&-title
+			font-weight: bold
+			font-size: 1rem
+			margin-bottom: 14px
+
+			&:not(:first-child)
+				margin: 2rem 0 14px
+
+		li
+
+			&:not(:first-child)
+				margin: 13px 0 0
+
+		&:not(.js__opened)
+
+			li
+
+				&:nth-child(n + 3)
+					display: none
+
+		&.js__opened
+
+			~ .orders-desc__list-toggle
+
+				&:before
+					transform: rotateZ(180deg)
+
+		&-toggle
+			margin: 2rem 0 0
+			color: $main-color
+			position: relative
+			padding-left: 23px
+			white-space: nowrap
+
+			&:before
+				content: ""
+				transition: transform .3s ease
+				position: absolute
+				top: 9px
+				left: 3px
+				background: url("../img/ico-orders-toggle.png") no-repeat
+				width: 10px
+				height: 5px
+
+.orders-menu
+	display: flex
+	margin-bottom: 20px
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: rem(39)
+			position: relative
+
+			&:after
+				content: ""
+				+size(1px 19px)
+				background: #e4e8ea
+				position: absolute
+				bottom: 1px
+				left: calc(100% + 20px)
+
+	&__link
+		transition: color .3s ease
+
+		&:hover, &:focus, &.active
+			color: $main-color
+
+
+
 button, input, select
 	font-family: inherit
 

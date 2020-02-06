@@ -1073,6 +1073,94 @@ $output-bourbon-deprecation-warnings: false
 	html
 		font-size: 93%
 
+	.detail-order
+
+		&__table
+
+			td
+
+				&:first-child
+
+					&:not(:last-child)
+						padding-left: 16px
+						width: 100px
+
+			tr
+
+				&.detail-order__table-subtitle
+
+					span
+						padding-left: 16px
+
+	.order-list
+		padding: 20px 16px
+		flex-direction: column
+
+		&__summary
+			margin: 25px 0 0
+
+	.filter
+		width: 100%
+
+	.lc-password
+		max-width: none
+
+	.orders-item
+
+		&__head, &__desc-title
+			padding: 16px
+
+		&__head
+			flex-wrap: wrap
+			justify-content: space-between
+
+		&__date
+			margin: 0 !important
+
+		&__more
+			margin: 10px 0 0 
+			width: 100%
+
+	.order-list
+
+		&__table, tbody, td
+			display: block
+
+		tr
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+
+			&:not(:last-child)
+				padding-bottom: 15px
+
+			&:not(:first-child)
+				padding-top: 15px
+				border-top: 1px solid var(--borderColor)
+
+		td
+
+			&:nth-child(2)
+				width: calc(100% - 88px)
+
+	.orders-desc
+		padding: 16px
+		flex-direction: column
+
+		&__right
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: space-between
+			align-items: center
+			margin: 20px 0 0
+
+		&__btn
+			width: 100%
+
+			.default-btn
+				display: block
+				text-align: center
+
 	.cart-aside__footer
 		display: none !important
 
